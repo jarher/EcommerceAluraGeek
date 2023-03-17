@@ -1,0 +1,6 @@
+.menu__form-submit{
+    background-color: transparent
+}
+.menu__form-submit:hover{
+    cursor:pointer
+}

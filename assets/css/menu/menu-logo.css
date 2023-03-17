@@ -1,0 +1,13 @@
+.menu__logo {
+  width: 7rem;
+}
+@media (min-width: 726px) {
+  .menu__logo {
+    order: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .menu__logo {
+    width: 10rem;
+  }
+}

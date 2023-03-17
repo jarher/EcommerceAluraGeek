@@ -1,0 +1,14 @@
+@import url("./reset.css");
+@import url("./menu/menu.css");
+
+html{
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+button{
+    border: none;
+}
+input{
+    border: none;
+    outline: none;
+}
