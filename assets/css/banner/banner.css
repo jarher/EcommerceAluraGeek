@@ -1,0 +1,24 @@
+@import url("./banner-title.css");
+@import url("./banner-description.css");
+@import url("./banner-button.css");
+
+.banner{
+    height: 40vh;
+    background: url("../../img/banner.png") no-repeat top center / cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 5%;
+}
+@media (min-width:726px){
+    .banner{
+        height: 47vh;
+    }
+}
+@media (min-width:1024px){
+    .banner{
+        height: 50vh;
+        padding: 3.25rem 6.25rem;
+    }
+}

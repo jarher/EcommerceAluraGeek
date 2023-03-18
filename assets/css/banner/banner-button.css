@@ -1,0 +1,29 @@
+.banner__button {
+  padding: 0;
+  width: 40%;
+}
+.banner__button a {
+  display: block;
+  padding: 10% 0;
+  font-size: 1rem;
+  background-color: #2a7ae4;
+  color: white;
+}
+@media (min-width: 726px) {
+  .banner__button {
+    width: 40%;
+  }
+  .banner__button a {
+    padding: 5% 0;
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .banner__button {
+    width: 15%;
+  }
+  .banner__button a {
+    padding: 7% 0;
+    font-size: 1.3rem;
+  }
+}
