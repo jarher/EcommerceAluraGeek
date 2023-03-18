@@ -3,13 +3,13 @@
 @import url("./banner-button.css");
 
 .banner{
-    height: 40vh;
+    height: 45vh;
     background: url("../../img/banner.png") no-repeat top center / cover;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     flex-direction: column;
-    padding: 5%;
+    padding:1rem 2rem;
 }
 @media (min-width:726px){
     .banner{

@@ -1,6 +1,7 @@
 @import url("./reset.css");
 @import url("./menu/menu.css");
 @import url("./banner/banner.css");
+@import url("./products/products.css");
 
 html{
     scroll-behavior: smooth;
@@ -12,4 +13,8 @@ button{
 input{
     border: none;
     outline: none;
+}
+img{
+    width: 100%;
+    height: auto;
 }
