@@ -8,7 +8,7 @@
 /* .product__card__box:last-child{
   justify-self: start;
 } */
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .product__card__box {
     width: calc((100% - 4rem) / 4);
   }

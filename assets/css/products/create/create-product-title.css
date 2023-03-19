@@ -2,7 +2,7 @@
     font-size: 1.3rem;
     color: #464646;
 }
-@media (min-width:726px) {
+@media (min-width:768px) {
     .create__product__title{
         font-size: 2rem;
     }

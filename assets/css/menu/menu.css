@@ -17,7 +17,7 @@
 .menu-create{
   padding: 1rem!important;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .menu {
     padding: 1rem 2rem;
     justify-content: flex-start;

@@ -6,7 +6,7 @@
     cursor: pointer;
 }
 
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .products__add{
     width: 30%;
   }  

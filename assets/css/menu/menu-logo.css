@@ -1,7 +1,7 @@
 .menu__logo {
   width: 7rem;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .menu__logo {
     order: 1;
     width: 8rem;

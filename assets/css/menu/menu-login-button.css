@@ -14,7 +14,7 @@
   width: 65% !important;
   font-size: 0.7rem;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .menu__login-button {
     order: 3;
     width: 20%;

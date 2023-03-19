@@ -8,7 +8,7 @@
   font-size: 1.3rem!important;
 }
 
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .products__menu {
     flex-direction: row;
     justify-content: space-between;

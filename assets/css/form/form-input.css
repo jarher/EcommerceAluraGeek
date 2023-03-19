@@ -15,7 +15,7 @@
 .login__input:focus{
     margin-top: 1rem;
 }
-@media (min-width: 726rem) {
+@media (min-width: 768rem) {
   .login__input:focus{
     margin-top: 1.5rem;
 }

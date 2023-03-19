@@ -9,7 +9,7 @@
   background-color: #2a7ae4;
   color: white;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .banner__button {
     width: 40%;
   }

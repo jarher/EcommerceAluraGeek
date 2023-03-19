@@ -2,7 +2,7 @@
     margin-top: 1.5rem;
     width: 100%;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
     .footer__form__container{
         width: 60%;
         margin-top: 1%;

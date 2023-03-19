@@ -1,11 +1,9 @@
 .product__image {
-  height: 35vh;
   overflow: hidden;
 }
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .product__image {
     flex: 1;
-    height: 30vh;
   }
 }
 @media (min-width: 1024px) {

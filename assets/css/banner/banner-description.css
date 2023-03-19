@@ -3,7 +3,7 @@
     font-size: 1.2rem;
     margin-bottom: 2%;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
     .banner__description{
         font-size: 1.3rem;
     }

@@ -1,7 +1,4 @@
 .footer__nav{
-    
-}
-.footer__nav{
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -13,7 +10,7 @@
 .footer__nav li a{
     color:#464646;
 }
-@media (min-width:726px) {
+@media (min-width:768px) {
     .footer__nav{
         align-items: flex-start;
     }

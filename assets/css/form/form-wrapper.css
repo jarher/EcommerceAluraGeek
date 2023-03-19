@@ -6,7 +6,7 @@
     position: relative;
     box-sizing: border-box;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
     .form__wrapper{
         padding: 3%;
     }

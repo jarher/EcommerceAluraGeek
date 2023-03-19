@@ -7,7 +7,7 @@
   margin-top: 5%;
   box-sizing: border-box;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .footer__author {
     padding: 2%;
     margin-top: 0;

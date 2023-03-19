@@ -1,4 +1,4 @@
-@media (min-width:726px){
+@media (min-width:768px){
     .footer__container{
         display: flex;
         flex-direction: column;

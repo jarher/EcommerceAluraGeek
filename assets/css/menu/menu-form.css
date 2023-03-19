@@ -13,7 +13,7 @@
   z-index: 1;
   background-color: rgb(241, 241, 241);
 }
-@media (min-width:726px){
+@media (min-width:768px){
     .menu__form{
         order:2;
         border-radius: 2rem;

@@ -1,7 +1,7 @@
 .footer__button {
   width: 53%;
 }
-@media (min-width: 726px) {
+@media (min-width: 768px) {
   .footer__button {
     width: 40%;
   }

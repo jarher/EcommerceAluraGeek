@@ -1,7 +1,7 @@
 .product__similar {
   padding: 1rem;
 }
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .product__similar {
     padding: 1rem 0;
   }
