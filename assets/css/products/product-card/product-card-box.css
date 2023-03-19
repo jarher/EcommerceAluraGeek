@@ -5,6 +5,9 @@
   margin-bottom: 5%;
   gap: 0.7rem;
 }
+/* .product__card__box:last-child{
+  justify-self: start;
+} */
 @media (min-width: 726px) {
   .product__card__box {
     width: calc((100% - 4rem) / 4);

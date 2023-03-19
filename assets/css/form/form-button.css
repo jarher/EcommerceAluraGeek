@@ -3,6 +3,7 @@
   color: white;
   padding: 5%;
   font-size: 1.1rem;
+  cursor: pointer;
 }
 @media (min-width: 726px) {
   .form__button {

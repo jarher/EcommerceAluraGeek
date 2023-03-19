@@ -1,4 +1,6 @@
 @import url("./products-header.css");
+@import url("./products-menu.css");
+@import url("./products-add.css");
 @import url("./products-title.css");
 @import url("./products-link.css");
 @import url("./product-card/products-cards.css");
@@ -8,6 +10,7 @@
 @import url("./product-card/product-card-price.css");
 @import url("./product-card/product-card-link.css");
 
+.products,
 .products__starwars,
 .products__console,
 .products__divers {
@@ -15,6 +18,7 @@
   box-sizing: border-box;
 }
 @media (min-width: 1024px) {
+  .products,
   .products__starwars,
   .products__console,
   .products__divers {
