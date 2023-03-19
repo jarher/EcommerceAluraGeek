@@ -1,0 +1,12 @@
+.form__label {
+  position: absolute;
+  color: #a2a2a2;
+  font-size: 1.2rem;
+  transition: all 0.25s;
+}
+@media (min-width: 726px) {
+  .form__label {
+    top: 1.3rem;
+    font-size: 1.5rem;
+  }
+}

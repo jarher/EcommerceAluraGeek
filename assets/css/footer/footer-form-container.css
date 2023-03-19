@@ -1,0 +1,15 @@
+.footer__form__container{
+    margin-top: 1.5rem;
+    width: 100%;
+}
+@media (min-width: 726px) {
+    .footer__form__container{
+        width: 60%;
+        margin-top: 1%;
+    }
+}
+@media (min-width: 1024px) {
+    .footer__form__container{
+        width: 45%;
+    }
+}

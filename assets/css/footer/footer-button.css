@@ -1,0 +1,8 @@
+.footer__button {
+  width: 53%;
+}
+@media (min-width: 726px) {
+  .footer__button {
+    width: 40%;
+  }
+}

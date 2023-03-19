@@ -1,0 +1,11 @@
+.form__button {
+  background-color: #2a7ae4;
+  color: white;
+  padding: 5%;
+  font-size: 1.1rem;
+}
+@media (min-width: 726px) {
+  .form__button {
+    padding: 3%;
+  }
+}

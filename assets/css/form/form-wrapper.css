@@ -1,0 +1,13 @@
+.form__wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 5%;
+    position: relative;
+    box-sizing: border-box;
+}
+@media (min-width: 726px) {
+    .form__wrapper{
+        padding: 3%;
+    }
+}

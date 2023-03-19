@@ -1,0 +1,29 @@
+@import url("./footer-container.css");
+@import url("./footer-logo.css");
+@import url("./footer-nav.css");
+@import url("./footer-form-container.css");
+@import url("./footer-form-title.css");
+@import url("./footer-author.css");
+@import url("./footer-button.css");
+
+.footer {
+  background-color: #eaf2fd;
+  padding: 1rem 1rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 726px) {
+  .footer {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .footer {
+    padding: 3.25rem 6.25rem;
+    justify-content: space-between;
+  }
+}

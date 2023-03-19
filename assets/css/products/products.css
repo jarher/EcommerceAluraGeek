@@ -1,19 +1,23 @@
 @import url("./products-header.css");
 @import url("./products-title.css");
 @import url("./products-link.css");
-@import url("./products-cards.css");
-@import url("./product-card.css");
-@import url("./product-card-image.css");
-@import url("./product-card-title.css");
-@import url("./product-card-price.css");
-@import url("./product-card-link.css");
+@import url("./product-card/products-cards.css");
+@import url("./product-card/product-card-box.css");
+@import url("./product-card/product-card-image.css");
+@import url("./product-card/product-card-title.css");
+@import url("./product-card/product-card-price.css");
+@import url("./product-card/product-card-link.css");
 
-.products{
-    padding: 2rem;
-    box-sizing: border-box;
+.products__starwars,
+.products__console,
+.products__divers {
+  padding: 1rem;
+  box-sizing: border-box;
 }
-@media(min-width:1024px){
-    .products{
-        margin: 2rem 6.25rem;
-    }
+@media (min-width: 1024px) {
+  .products__starwars,
+  .products__console,
+  .products__divers {
+    margin: 1rem 6.25rem;
+  }
 }

@@ -2,6 +2,8 @@
 @import url("./menu/menu.css");
 @import url("./banner/banner.css");
 @import url("./products/products.css");
+@import url("./form/form.css");
+@import url("./footer/footer.css");
 
 html{
     scroll-behavior: smooth;
@@ -10,8 +12,11 @@ html{
 button{
     border: none;
 }
-input{
+input, textarea{
     border: none;
+    outline: none;
+}
+input:focus{
     outline: none;
 }
 img{

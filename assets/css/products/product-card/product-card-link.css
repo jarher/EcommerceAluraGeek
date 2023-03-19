@@ -1,0 +1,7 @@
+.product__card-link {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.product__card-link a {
+  color: #2a7ae4;
+}

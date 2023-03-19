@@ -1,0 +1,19 @@
+@media (min-width:726px){
+    .footer__container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (min-width:1024px){
+    .footer__container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 47%;
+    }
+}
+@media (min-width:1440px){
+    .footer__container{
+        width: 40%;
+    }
+}
