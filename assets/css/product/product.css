@@ -1,0 +1,22 @@
+@import url("./product-container.css");
+@import url("./product-image.css");
+@import url("./product-description.css");
+@import url("./product-title.css");
+@import url("./product-price.css");
+@import url("./product-similar.css");
+@import url("./product-similar-title.css");
+
+.product{
+    display: flex;
+    flex-direction: column;
+}
+@media (min-width:726px) {
+    .product{
+        padding: 1rem;
+    }
+}
+@media (min-width:1024px) {
+    .product{
+        padding: 3.25rem 6.25rem;
+    }
+}

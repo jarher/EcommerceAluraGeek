@@ -1,0 +1,16 @@
+.product__container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 726px) {
+  .product__container {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+@media (min-width: 1024px) {
+  .product__container {
+    flex-direction: row;
+    align-items: center;
+  }
+}

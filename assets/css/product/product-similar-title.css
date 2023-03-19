@@ -1,0 +1,16 @@
+.product__similar__title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 1% 0;
+  display: block;
+}
+@media (min-width: 720px) {
+  .product__similar__title {
+    margin: 1% 0 5%;
+  }
+}
+@media (min-width: 1024px) {
+  .product__similar__title {
+    margin: 1% 0 2%;
+  }
+}

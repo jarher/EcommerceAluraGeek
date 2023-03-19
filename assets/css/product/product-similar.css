@@ -1,0 +1,8 @@
+.product__similar {
+  padding: 1rem;
+}
+@media (min-width: 720px) {
+  .product__similar {
+    padding: 1rem 0;
+  }
+}
