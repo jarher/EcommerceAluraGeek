@@ -5,12 +5,14 @@
 @import url("./menu-form-submit.css");
 
 .menu {
+  background-color: white;
   padding:1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   gap: 1rem;
+  box-sizing: border-box;
 }
 @media (min-width: 726px) {
   .menu {
@@ -20,7 +22,6 @@
 }
 @media(min-width:1024px){
     .menu{
-        margin: auto 6.25rem;
-        padding: 2% 0;
+        padding: 2rem 6.25rem;
     }
 }

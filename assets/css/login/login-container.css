@@ -1,0 +1,13 @@
+.login__container {
+  width: 80%;
+}
+@media (min-width: 726px) {
+  .login__container {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .login__container {
+    width: 30%;
+  }
+}
