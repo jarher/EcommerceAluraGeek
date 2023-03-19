@@ -1,0 +1,9 @@
+.create__product {
+  padding: 1rem;
+}
+@media (min-width: 1024px) {
+  .create__product {
+    width: 50%;
+    margin:2% auto;
+  }
+}

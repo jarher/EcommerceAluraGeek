@@ -4,6 +4,7 @@
 @media (min-width: 726px) {
   .menu__logo {
     order: 1;
+    width: 8rem;
   }
 }
 @media (min-width: 1024px) {

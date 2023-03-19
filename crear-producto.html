@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Geek - crear producto</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="menu menu-create">
+        <a href="./index.html" class="menu__logo">
+            <img src="./assets/img/Logo.png" alt="alura geek logo">
+        </a>
+        <button class="menu__login-button menu__admin-button">Menú administrador</button>
+        <form class="menu__form" action="">
+            <input class="menu__form-input" type="search" name="search" id="search" data-search
+                placeholder="¿Qué deseas buscar?">
+            <button class="menu__form-submit">
+                <span class="material-symbols-rounded">
+                    search
+                </span>
+            </button>
+        </form>
+    </nav>
+    <section class="create__product">
+        <h1 class="create__product__title">Agregar nuevo producto</h1>
+        <form class="form">
+            <div class="form__wrapper">
+                <input class="form__input" type="text" name="imageUrlProduct" id="imageUrlProduct" placeholder="imageUrlProduct" data-image-url required>
+                <label class="form__label" for="imageUrlProduct">URL de la imagen</label>
+            </div>
+            <div class="form__wrapper">
+                <input class="form__input" type="text" name="categoryProduct" id="categoryProduct" placeholder="categoryProduct" data-category-product required>
+                <label class="form__label" for="categoryProduct">Categoría</label>
+            </div>
+            <div class="form__wrapper">
+                <input class="form__input" type="text" name="productName" id="productName" placeholder="productName" data-product-name required>
+                <label class="form__label" for="productName">Nombre del producto</label>
+            </div>
+            <div class="form__wrapper">
+                <input class="form__input" type="text" name="productPrice" id="productPrice" placeholder="productPrice" data-product-price required>
+                <label class="form__label" for="productPrice">Precio del producto</label>
+            </div>
+            <div class="form__wrapper">
+                <textarea class="form__message" name="productDescription" id="productDescription" cols="30" rows="10" data-product-description
+                    placeholder="Descripción del producto"></textarea>
+            </div>
+            <button class="form__button create__form__button" type="submit">Agregar producto</button>
+        </form>
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="footer__container">
+                <a class="footer__logo" href="">
+                    <img src="./assets/img/Logo.png" alt="">
+                </a>
+                <ul class="footer__nav">
+                    <li><a href="">Quienes somos</a></li>
+                    <li><a href="">Política de privacidad</a></li>
+                    <li><a href="">Programa de fidelidad</a></li>
+                    <li><a href="">Nuestras tiendas</a></li>
+                    <li><a href="">Quiero ser franquiciado</a></li>
+                    <li><a href="">Anuncie aquí</a></li>
+                </ul>
+            </div>
+            <div class="footer__form__container">
+                <span class="form__title footer__form__title">Hable con nosostros</span>
+                <form class="form">
+                    <div class="form__wrapper">
+                        <input class="form__input" type="text" name="username" id="username" placeholder="nombre"
+                            data-username required>
+                        <label class="form__label" for="username">Nombre</label>
+                    </div>
+                    <div class="form__wrapper">
+                        <textarea class="form__message" name="usermessage" id="usermessage" cols="30" rows="10"
+                            data-usermessage placeholder="Escribe tu mensaje"></textarea>
+                    </div>
+                    <button class="form__button footer__button" type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer__author">
+            <p>Desarrollado por Jeffer Andrés Rojas</p>
+            <p>&copy; 2023</p>
+        </div>
+    </footer>
+</body>
+
+</html>

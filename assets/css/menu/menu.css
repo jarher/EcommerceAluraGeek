@@ -14,6 +14,9 @@
   gap: 1rem;
   box-sizing: border-box;
 }
+.menu-create{
+  padding: 1rem!important;
+}
 @media (min-width: 726px) {
   .menu {
     padding: 1rem 2rem;

@@ -9,6 +9,9 @@
 @import url("./product-card/product-card-title.css");
 @import url("./product-card/product-card-price.css");
 @import url("./product-card/product-card-link.css");
+/* create products  */
+@import url("./create/create-product.css");
+@import url("./create/create-product-title.css");
 
 .products,
 .products__starwars,
