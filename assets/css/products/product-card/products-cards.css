@@ -1,5 +1,15 @@
-.products__cards{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+.products__cards {
+  display: flex;
+  flex-flow: row wrap;
+  gap: calc(100% - calc((100% - 3rem) / 2) * 2);
+}
+@media (min-width: 768px) {
+  .products__cards {
+    gap: calc(100% - calc((100% - 1rem) / 4) * 4);
+  }
+}
+@media (min-width: 1024px) {
+  .products__cards {
+    gap: calc(100% - calc((100% - 1.2rem) / 4) * 4);
+  }
 }
