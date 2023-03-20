@@ -8,9 +8,12 @@
 @import url("./product-card/product-card-title.css");
 @import url("./product-card/product-card-price.css");
 @import url("./product-card/product-card-link.css");
-/* create products  */
+
+/* create, edit y delete products  */
 @import url("./create/create-product.css");
 @import url("./create/create-product-title.css");
+@import url("./product-card/product-card-edit-bar.css");
+@import url("./product-card/product-edit-button.css");
 
 .products,
 .products__starwars,

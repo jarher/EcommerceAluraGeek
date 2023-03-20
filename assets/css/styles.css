@@ -6,13 +6,17 @@
 @import url("./form/form.css");
 @import url("./footer/footer.css");
 @import url("./login/login.css");
-
+@font-face {
+  font-family: "raleway";
+  src: url("../fonts/Raleway-VariableFont_wght.ttf");
+}
 html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
 body {
   background-color: #f5f5f5;
+  font-family: "raleway", sans-serif;
 }
 img {
   width: 100%;

@@ -4,6 +4,7 @@
   flex-direction: column;
   margin-bottom: 5%;
   gap: 0.7rem;
+  position: relative;
 }
 @media (min-width: 768px) {
   .product__card__box {

@@ -1,0 +1,12 @@
+.product__card__edit-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2%;
+  z-index: 1;
+}
+@media (min-width: 1024px) {
+  .product__card__edit-bar {
+    padding: 5%;
+  }
+}
