@@ -1,0 +1,18 @@
+{
+  "admin": [
+    {
+      "userEmail": "jefferh33@gmail.com",
+      "userPassword": "aluraGeekAdmin11"
+    }
+  ],
+  "products": [
+    {
+      "imgUrl": "image.npg",
+      "productTitle": "vaso guerrero",
+      "productPrice": 9.95,
+      "productLink": "/product.html",
+      "productDescription": "vaso de tomar té",
+      "id": 1
+    }
+  ]
+}
