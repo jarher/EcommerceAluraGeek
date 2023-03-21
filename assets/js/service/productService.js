@@ -11,7 +11,9 @@ const productList = async () => {
 
 const createProduct = async (
   imgUrl,
+  imgAlt,
   productTitle,
+  productCategory,
   productPrice,
   productLink,
   productDescription
@@ -25,7 +27,9 @@ const createProduct = async (
       body: JSON.stringify({
         id: uuid.v4(),
         imgUrl,
+        imgAlt,
         productTitle,
+        productCategory,
         productPrice,
         productLink,
         productDescription,
@@ -63,6 +67,8 @@ const getProduct = async (productId) => {
 const updateProduct = async (
   productId,
   imgUrl,
+  imgAlt,
+  productType,
   productTitle,
   productPrice,
   productLink,
@@ -76,6 +82,7 @@ const updateProduct = async (
       },
       body: JSON.stringify({
         imgUrl,
+        imgAlt,
         productTitle,
         productPrice,
         productLink,
