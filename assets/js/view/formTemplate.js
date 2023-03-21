@@ -2,14 +2,14 @@ const formTemplate = (value) => {
   if (value === "footer") {
     return footerFormTemplate;
   }
-  if (value === "admin") {
+  if (value === "create") {
     return adminFormTemplate();
   }
   if (value === "menu") {
     return menuFormTemplate;
   }
   if (value === "login") {
-    return loginFormTemplate;
+    return loginFormTemplate();
   }
 };
 
@@ -35,8 +35,8 @@ const adminFormTemplate = () => {
             <label class="form__label" for="imageUrlProduct">URL de la imagen</label>
         </div>
         <div class="form__wrapper">
-            <input class="form__input" type="text" name="imageUrlDescription" id="imageUrlDescription" placeholder="descripción de la imagen" data-image-alt required>
-            <label class="form__label" for="imageUrlDescription">Descripción de la imagen</label>
+            <input class="form__input" type="text" name="imageDescription" id="imageDescription" placeholder="descripción de la imagen" data-image-alt required>
+            <label class="form__label" for="imageDescription">Descripción de la imagen</label>
         </div>
         <div class="form__wrapper">
             <input class="form__input" type="text" name="categoryProduct" id="categoryProduct" placeholder="categoryProduct" data-category-product required>
@@ -54,11 +54,11 @@ const adminFormTemplate = () => {
             <textarea class="form__message" name="productDescription" id="productDescription" cols="30" rows="10" data-product-description
                 placeholder="Descripción del producto"></textarea>
         </div>
-        <button class="form__button create__form__button" type="submit">Agregar producto</button>
+        <button class="form__button create__form__button" type="submit" data-type="create-product">Agregar producto</button>
 `;
 
   const form = document.createElement("form");
-  form.setAttribute("class","form");
+  form.setAttribute("class", "form");
   form.innerHTML = template;
 
   return form;
@@ -76,8 +76,8 @@ const menuFormTemplate = `
     </form>
 `;
 
-const loginFormTemplate = `
-<form class="form">
+const loginFormTemplate = () => {
+  const template = `
     <div class="form__wrapper">
         <input type="email" class="login__input" data-login-email
             placeholder="Escriba su correo electrónico" required>
@@ -87,8 +87,13 @@ const loginFormTemplate = `
             placeholder="Escriba su contraseña" required>
     </div>
 
-    <button class="form__button login__button">Entrar</button>
-</form>
-`;
+    <button class="form__button login__button">Entrar</button>`;
+
+  const form = document.createElement("form");
+  form.setAttribute("class", "form");
+  form.innerHTML = template;
+
+  return form;
+};
 
 export default formTemplate;

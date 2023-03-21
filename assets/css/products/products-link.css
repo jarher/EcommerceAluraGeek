@@ -1,7 +1,12 @@
-.products__link a{
-    display: flex;
-    align-items: center;
-    color: #2A7AE4;
-    font-size: 1.5rem;
-    font-weight: 600;
+.products__link a {
+  display: flex;
+  align-items: center;
+  color: #2a7ae4;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .products__link a {
+    font-size: 1.2rem;
+  }
 }

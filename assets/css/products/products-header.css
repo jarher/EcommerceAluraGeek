@@ -1,6 +1,15 @@
-.products__header{
-    display:flex;
-    justify-content: space-between;
-    align-items:flex-end;
-    margin-bottom: 2%;
+.products__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5%;
 }
+@media (min-width: 768px) {
+  .products__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2%;
+  }
+}
+

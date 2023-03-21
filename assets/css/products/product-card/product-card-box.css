@@ -8,11 +8,20 @@
 }
 @media (min-width: 768px) {
   .product__card__box {
-    width: calc((100% - 4rem) / 4);
+    width: calc((100% - 3.3rem) / 4);
   }
+  .product__card__box:nth-child(5),
+  .product__card__box:nth-child(5) + div{
+    display: none;
+  }
+
 }
 @media (min-width: 1024px) {
   .product__card__box {
     width: calc((100% - 6.25rem) / 6);
+  }
+  .product__card__box:nth-child(5),
+  .product__card__box:nth-child(5) + div{
+    display: flex;
   }
 }

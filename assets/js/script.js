@@ -1,13 +1,25 @@
-import footerTemplate from "./view/footerTemplate.js";
+import { getData, loadFormCreate } from "./controller/createController.js";
+import { getAllProducts } from "./controller/indexController.js";
+import { loadFooter, loadMenu } from "./controller/loadMainModules.js";
+import { loadLoginForm } from "./controller/loginController.js";
+import { loadProductsByCategory } from "./controller/productsController.js";
 import formTemplate from "./view/formTemplate.js";
-import menuTemplate from "./view/menuTemplate.js";
-import productCardboxTemplate from "./view/productTemplate.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector("body").prepend(menuTemplate(false));
-  document.querySelectorAll(".products__cards").forEach((productWrapper) => {
-    productWrapper.appendChild(productCardboxTemplate(false));
-  });
-  document.querySelector("footer").innerHTML = footerTemplate();
-  document.querySelector(".create__product").append(formTemplate("admin"));
+  loadMenu(false);
+  loadFooter();
+  // loadLoginForm();
+  // loadFormCreate();
+  getAllProducts(true);
+  
+  // document.querySelector(".create__product").append(formTemplate("admin"));
 });
+
+loadProductsByCategory();
+
+document.addEventListener("click", (e) => {
+  const dataset = e.target.dataset;
+  if(dataset.type === "create-product"){
+    getData(e);
+  }
+})

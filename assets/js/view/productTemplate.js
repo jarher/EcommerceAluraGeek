@@ -1,6 +1,14 @@
-const productCardboxTemplate = (edit) => {
-    // imgUrl, imgAlt, productTitle, productPrice, productLink;
-    const editTool = `
+const productCardboxTemplate = (
+  {
+    productId,
+    imgUrl,
+    imgAlt,
+    productTitle,
+    productPrice,
+  },
+  isEditable
+) => {
+  const editTool = `
     <div class="product__card__edit-bar">
         <button class="product__edit__button">
             <a href="" title="eliminar">
@@ -18,22 +26,22 @@ const productCardboxTemplate = (edit) => {
         </button>
     </div>`;
 
-    const template = `
-    ${edit ? editTool: ""}
+  const template = `
+    ${isEditable ? editTool : ""}
     <div class="product__card-image">
-        <img src="./assets/img/starwars-image/product_starwar_1.png" alt="">
+        <img src="${imgUrl}" alt="${imgAlt}">
     </div>
-    <h3 class="product__card-title">Producto XYZ</h3>
-    <span class="product__card-price">$60.00</span>
-    <span class="product__card-link"><a href="">Ver producto</a></span>
+    <h3 class="product__card-title">${productTitle}</h3>
+    <span class="product__card-price">$ ${productPrice}</span>
+    <span class="product__card-link"><a href="producto.html?productId=${productId}">Ver producto</a></span>
     `;
 
-    const cardBox = document.createElement("div");
-    cardBox.setAttribute("class", "product__card__box");
+  const cardBox = document.createElement("div");
+  cardBox.setAttribute("class", "product__card__box");
 
-    cardBox.innerHTML = template;
+  cardBox.innerHTML = template;
 
-    return cardBox;
-}
+  return cardBox;
+};
 
 export default productCardboxTemplate;

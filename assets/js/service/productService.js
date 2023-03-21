@@ -15,7 +15,6 @@ const createProduct = async (
   productTitle,
   productCategory,
   productPrice,
-  productLink,
   productDescription
 ) => {
   try {
@@ -25,13 +24,12 @@ const createProduct = async (
         "content-Type": "application/json",
       },
       body: JSON.stringify({
-        id: uuid.v4(),
+        productId: uuid.v4(),
         imgUrl,
         imgAlt,
         productTitle,
         productCategory,
         productPrice,
-        productLink,
         productDescription,
       }),
     });
@@ -68,10 +66,9 @@ const updateProduct = async (
   productId,
   imgUrl,
   imgAlt,
-  productType,
+  productCategory,
   productTitle,
   productPrice,
-  productLink,
   productDescription
 ) => {
   try {
@@ -83,9 +80,9 @@ const updateProduct = async (
       body: JSON.stringify({
         imgUrl,
         imgAlt,
+        productCategory,
         productTitle,
         productPrice,
-        productLink,
         productDescription,
       }),
     });
