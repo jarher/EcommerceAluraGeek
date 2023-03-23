@@ -1,25 +1,46 @@
-import { getData, loadFormCreate } from "./controller/createController.js";
-import { getAllProducts } from "./controller/indexController.js";
-import { loadFooter, loadMenu } from "./controller/loadMainModules.js";
-import { loadLoginForm } from "./controller/loginController.js";
-import { loadProductsByCategory } from "./controller/productsController.js";
-import formTemplate from "./view/formTemplate.js";
+import { productsController } from "./controller/productsController.js";
+import { loginView } from "./view/loginView.js";
+import { maniModulesView } from "./view/mainModulesView.js";
+import { productView } from "./view/productView.js";
+
+let isEditable = false;
+let loginState = false;
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadMenu(false);
-  loadFooter();
-  // loadLoginForm();
-  // loadFormCreate();
-  getAllProducts(true);
-  
-  // document.querySelector(".create__product").append(formTemplate("admin"));
+  const location = new URL(window.location);
+  let pathname = location.pathname.replace("/", "").split("?")[0];
+ 
+  if (pathname === "productos.html") {
+    productsController.loadProductsByCategory(isEditable);
+  }
+  if (pathname === "login.html") {
+    loginView.loadLoginForm();
+  }
+  if (pathname === "crear-producto.html") {
+    productView.loadProductFormCreate();
+  }
+  if (pathname === "editar-productos.html") {
+    isEditable = true;
+    productsController.listEditAllProducts(isEditable);
+  }
+  if(pathname === "editar-producto.html"){
+    productsController.getProduct();
+  }
+  maniModulesView.loadMenu(loginState);
+  maniModulesView.loadFooter();
+  productsController.listAllProducts(isEditable);
 });
-
-loadProductsByCategory();
 
 document.addEventListener("click", (e) => {
   const dataset = e.target.dataset;
-  if(dataset.type === "create-product"){
-    getData(e);
+  
+  if(dataset.type === "create-form"){
+    window.location.href = "crear-producto.html";
   }
-})
+  if (dataset.type === "create-product") {
+    sendData(e);
+  }
+  if(dataset.type === "delete"){
+    productsController.delProduct(dataset.id);
+  }
+});

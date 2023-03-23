@@ -1,6 +1,6 @@
 const productCardboxTemplate = (
   {
-    productId,
+    id,
     imgUrl,
     imgAlt,
     productTitle,
@@ -11,14 +11,12 @@ const productCardboxTemplate = (
   const editTool = `
     <div class="product__card__edit-bar">
         <button class="product__edit__button">
-            <a href="" title="eliminar">
-                <span class="material-symbols-rounded">
-                    delete
-                </span>
-            </a>
+           <span class="material-symbols-rounded" title="eliminar" data-type="delete" data-id="${id}">
+              delete
+            </span>
         </button>
         <button class="product__edit__button">
-            <a href="" title="editar">
+            <a href="editar-producto.html?product_id=${id}" title="editar">
                 <span class="material-symbols-rounded">
                     edit
                 </span>
@@ -33,7 +31,7 @@ const productCardboxTemplate = (
     </div>
     <h3 class="product__card-title">${productTitle}</h3>
     <span class="product__card-price">$ ${productPrice}</span>
-    <span class="product__card-link"><a href="producto.html?productId=${productId}">Ver producto</a></span>
+    <span class="product__card-link"><a href="producto.html?productId=${id}">Ver producto</a></span>
     `;
 
   const cardBox = document.createElement("div");

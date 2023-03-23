@@ -1,11 +1,16 @@
 .menu__login-button {
-  padding: 2%;
-  font-size: 1rem;
   width: 35%;
   border: 2px solid #2a7ae4;
+  background-color: transparent;
+}
+.menu__login-button a {
+  display: block;
+  padding: 5%;
+  font-size: 1rem;
   color: #2a7ae4;
   font-weight: 600;
-  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
 }
 .menu__login-button:hover {
   cursor: pointer;
@@ -22,6 +27,9 @@
     right: 2rem;
     padding: 1%;
   }
+  .menu__login-button a {
+    padding: 1%;
+  }
   .menu__admin-button {
     width: 20% !important;
     padding: 1%;
@@ -29,8 +37,11 @@
 }
 @media (min-width: 1024px) {
   .menu__login-button {
-    width: 15%;
+    width: 10%;
     right: 6.25rem;
+  }
+  .menu__login-button a {
+    padding: 0;
   }
   .menu__admin-button {
     width: 20% !important;

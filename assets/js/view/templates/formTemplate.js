@@ -1,9 +1,12 @@
-const formTemplate = (value) => {
+const formTemplate = (value, object) => {
   if (value === "footer") {
     return footerFormTemplate;
   }
   if (value === "create") {
-    return adminFormTemplate();
+    return adminCreateTemplate();
+  }
+  if (value === "edit") {
+    return adminEditTemplate(object);
   }
   if (value === "menu") {
     return menuFormTemplate;
@@ -28,7 +31,7 @@ const footerFormTemplate = `
     </form>
 `;
 
-const adminFormTemplate = () => {
+const adminCreateTemplate = () => {
   const template = `
         <div class="form__wrapper">
             <input class="form__input" type="text" name="imageUrlProduct" id="imageUrlProduct" placeholder="imageUrlProduct" data-image-url required>
@@ -55,6 +58,49 @@ const adminFormTemplate = () => {
                 placeholder="Descripción del producto"></textarea>
         </div>
         <button class="form__button create__form__button" type="submit" data-type="create-product">Agregar producto</button>
+`;
+
+  const form = document.createElement("form");
+  form.setAttribute("class", "form");
+  form.innerHTML = template;
+
+  return form;
+};
+
+const adminEditTemplate = ({
+  imgUrl,
+  imgAlt,
+  productCategory,
+  productDescription,
+  productPrice,
+  productTitle,
+}) => {
+  const template = `
+        <div class="form__wrapper">
+            <input class="form__input" type="text" name="imageUrlProduct" id="imageUrlProduct" placeholder="imageUrlProduct" value=${imgUrl} data-image-url required>
+            <label class="form__label" for="imageUrlProduct">URL de la imagen</label>
+        </div>
+        <div class="form__wrapper">
+            <input class="form__input" type="text" name="imageDescription" id="imageDescription" placeholder="descripción de la imagen" value=${imgAlt} data-image-alt required>
+            <label class="form__label" for="imageDescription">Descripción de la imagen</label>
+        </div>
+        <div class="form__wrapper">
+            <input class="form__input" type="text" name="categoryProduct" id="categoryProduct" placeholder="categoryProduct" value=${productCategory} data-category-product required>
+            <label class="form__label" for="categoryProduct">Categoría</label>
+        </div>
+        <div class="form__wrapper">
+            <input class="form__input" type="text" name="productName" id="productName" placeholder="productName" value=${productTitle} data-product-name required>
+            <label class="form__label" for="productName">Nombre del producto</label>
+        </div>
+        <div class="form__wrapper">
+            <input class="form__input" type="text" name="productPrice" id="productPrice" placeholder="productPrice" value=${productPrice} data-product-price required>
+            <label class="form__label" for="productPrice">Precio del producto</label>
+        </div>
+        <div class="form__wrapper">
+            <textarea class="form__message" name="productDescription" id="productDescription" cols="30" rows="10" data-product-description
+                placeholder="Ingrese una descripción del producto">${productDescription}</textarea>
+        </div>
+        <button class="form__button create__form__button" type="submit" data-type="create-product">Editar producto</button>
 `;
 
   const form = document.createElement("form");

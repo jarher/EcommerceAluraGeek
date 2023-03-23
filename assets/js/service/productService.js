@@ -9,14 +9,14 @@ const productList = async () => {
   }
 };
 
-const createProduct = async (
+const createProduct = async ({
   imgUrl,
   imgAlt,
   productTitle,
   productCategory,
   productPrice,
-  productDescription
-) => {
+  productDescription,
+}) => {
   try {
     const response = await fetch("http://localhost:3000/products", {
       method: "POST",
@@ -41,19 +41,10 @@ const createProduct = async (
   }
 };
 
-const deleteProduct = async (productId) => {
-  try {
-    return await fetch(`http:://localhost:3000/products/${productId}`, {
-      method: "DELETE",
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const getProduct = async (productId) => {
   try {
-    const response = fetch(`http://localhost:3000/products/${productId}`);
+    const response = await fetch(`http://localhost:3000/products/${productId}`);
+    
     if (response) {
       return response.json();
     }
@@ -62,15 +53,15 @@ const getProduct = async (productId) => {
   }
 };
 
-const updateProduct = async (
+const updateProduct = async ({
   productId,
   imgUrl,
   imgAlt,
   productCategory,
   productTitle,
   productPrice,
-  productDescription
-) => {
+  productDescription,
+}) => {
   try {
     return await fetch(`http://localhost:3000/products/${productId}`, {
       method: "PUT",
@@ -91,10 +82,19 @@ const updateProduct = async (
   }
 };
 
+const deleteProduct = async (id) => {
+  try {
+    return await fetch(`http://localhost:3000/products/${id}`, {
+      method: "DELETE",
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const makeRequest = {
-    productList,
-    createProduct,
-    deleteProduct,
-    getProduct,
-    updateProduct
-}
+  productList,
+  createProduct,
+  deleteProduct,
+  getProduct,
+  updateProduct,
+};

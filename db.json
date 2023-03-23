@@ -7,70 +7,7 @@
   ],
   "products": [
     {
-      "productId": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
-      "imgUrl": "./assets/img/starwars-image/product_starwar_1.png",
-      "imgAlt": "vaso starwars",
-      "productTitle": "starwars",
-      "productCategory": "starwars",
-      "productPrice": "19.95",
-      "productDescription": "vaso para beber mientras ve peliculas"
-    },
-    {
-      "productId": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
-      "imgUrl": "./assets/img/starwars-image/product_starwar_1.png",
-      "imgAlt": "vaso starwars",
-      "productTitle": "starwars",
-      "productCategory": "starwars",
-      "productPrice": "19.95",
-      "productDescription": "vaso para beber mientras ve peliculas"
-    },
-    {
-      "productId": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
-      "imgUrl": "./assets/img/starwars-image/product_starwar_1.png",
-      "imgAlt": "vaso starwars",
-      "productTitle": "starwars",
-      "productCategory": "starwars",
-      "productPrice": "19.95",
-      "productDescription": "vaso para beber mientras ve peliculas"
-    },
-    {
-      "productId": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
-      "imgUrl": "./assets/img/starwars-image/product_starwar_1.png",
-      "imgAlt": "vaso starwars",
-      "productTitle": "starwars",
-      "productCategory": "starwars",
-      "productPrice": "19.95",
-      "productDescription": "vaso para beber mientras ve peliculas"
-    },
-    {
-      "productId": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
-      "imgUrl": "./assets/img/starwars-image/product_starwar_1.png",
-      "imgAlt": "vaso starwars",
-      "productTitle": "starwars",
-      "productCategory": "starwars",
-      "productPrice": "19.95",
-      "productDescription": "vaso para beber mientras ve peliculas"
-    },
-    {
-      "productId": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
-      "imgUrl": "./assets/img/starwars-image/product_starwar_1.png",
-      "imgAlt": "vaso starwars",
-      "productTitle": "starwars",
-      "productCategory": "starwars",
-      "productPrice": "19.95",
-      "productDescription": "vaso para beber mientras ve peliculas"
-    },
-    {
-      "productId": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
-      "imgUrl": "./assets/img/starwars-image/product_starwar_1.png",
-      "imgAlt": "vaso starwars",
-      "productTitle": "starwars",
-      "productCategory": "starwars",
-      "productPrice": "19.95",
-      "productDescription": "vaso para beber mientras ve peliculas"
-    },
-    {
-      "productId": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
+      "id": "60d65a01-79b1-4ff0-9b08-3afd1dfd9a11",
       "imgUrl": "./assets/img/starwars-image/product_starwar_1.png",
       "imgAlt": "vaso starwars",
       "productTitle": "starwars",
