@@ -15,10 +15,7 @@
 @import url("./product-card/product-card-edit-bar.css");
 @import url("./product-card/product-edit-button.css");
 
-.products,
-.products__starwars,
-.products__console,
-.products__divers {
+.products {
   padding: 1rem;
   box-sizing: border-box;
 }

@@ -1,5 +1,6 @@
 import formTemplate from "./templates/formTemplate.js";
 import productCardboxTemplate from "./templates/productTemplate.js";
+import singleProductTemplate from "./templates/singleProductTemplate.js";
 
 const loadProductFormCreate = () => {
   document
@@ -31,6 +32,24 @@ const renderAllProducts = (productList, isEditable) => {
   }
 };
 
+const renderSearchProducts = (searchList, isEditable) => {
+  const sections_container = document.querySelector(".sections__container");
+  const results_container = document.createElement("section");
+  results_container.setAttribute("class","section__results");
+
+  const products_container = document.querySelectorAll(".products");
+  if (searchList.length !== 0) {
+    products_container.forEach((element) => (element.style.display = "none"));
+    for (let product of searchList) {
+      results_container.append(productCardboxTemplate(product, isEditable));
+    }
+    sections_container.prepend(results_container);
+  } else {
+    results_container.remove();
+    products_container.forEach((element) => (element.style.display = "block"));
+  }
+};
+
 const renderListCategory = (productList, category, isEditable) => {
   const products_cards = document.querySelector(".products__cards");
   const products_title = document.querySelector(".products__title");
@@ -44,16 +63,22 @@ const renderListCategory = (productList, category, isEditable) => {
   }
 };
 
-const renderProduct = (product) => {
+const renderEditProductForm = (product) => {
   document
     .querySelector(".create__product")
     .append(formTemplate("edit", product));
+};
+
+const renderSingleProduct = (data) => {
+  document.querySelector(".product").prepend(singleProductTemplate(data));
 };
 
 export const productView = {
   loadProductFormCreate,
   renderlistIndex,
   renderListCategory,
-  renderProduct,
+  renderEditProductForm,
   renderAllProducts,
+  renderSingleProduct,
+  renderSearchProducts,
 };

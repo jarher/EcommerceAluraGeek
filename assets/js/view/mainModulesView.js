@@ -9,4 +9,4 @@ const loadFooter = () => {
   document.querySelector("footer").innerHTML = footerTemplate();
 };
 
-export const maniModulesView = { loadMenu, loadFooter };
+export const mainModulesView = { loadMenu, loadFooter };

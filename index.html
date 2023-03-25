@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,55 +11,59 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
-<body>
+<body> -->
     <div class="banner">
         <h1 class="banner__title">Febrero promocional</h1>
         <p class="banner__description">Productos seleccionados con 33% de descuento</p>
-        <button class="banner__button"><a href="">Ver consolas</a></button>
+        <button class="banner__button"><a href="productos.html?category=console">Ver consolas</a></button>
     </div>
-    <section class="products__starwars">
-        <div class="products__header">
-            <h2 class="products__title">Star Wars</h2>
-            <span class="products__link">
-                <a href="productos.html?category=star wars">
-                    Ver todo
-                    <span class="material-symbols-rounded">
-                        arrow_right_alt
-                    </span>
-                </a>
-            </span>
-        </div>
-        <div class="products__cards" data-type="starwars"></div>
-    </section>
-    <section class="products__console" data-type="console">
-        <div class="products__header">
-            <h2 class="products__title">Consolas</h2>
-            <span class="products__link">
-                <a href="productos.html?category=console">
-                    Ver todo
-                    <span class="material-symbols-rounded">
-                        arrow_right_alt
-                    </span>
-                </a>
-            </span>
-        </div>
-        <div class="products__cards" data-type="consoles"></div>
-    </section>
-    <section class="products__divers" data-type="divers">
-        <div class="products__header">
-            <h2 class="products__title">Diversos</h2>
-            <span class="products__link">
-                <a href="productos.html?category=divers">
-                    Ver todo
-                    <span class="material-symbols-rounded">
-                        arrow_right_alt
-                    </span>
-                </a>
-            </span>
-        </div>
-        <div class="products__cards" data-type="divers"></div>
-    </section>
+    <div class="sections__container">
+        <section class="products">
+            <div class="products__header">
+                <h2 class="products__title">Star Wars</h2>
+                <span class="products__link">
+                    <a href="productos.html?category=star wars">
+                        Ver todo
+                        <span class="material-symbols-rounded">
+                            arrow_right_alt
+                        </span>
+                    </a>
+                </span>
+            </div>
+            <div class="products__cards" data-type="starwars"></div>
+        </section>
+        <section class="products">
+            <div class="products__header">
+                <h2 class="products__title">Consolas</h2>
+                <span class="products__link">
+                    <a href="productos.html?category=console">
+                        Ver todo
+                        <span class="material-symbols-rounded">
+                            arrow_right_alt
+                        </span>
+                    </a>
+                </span>
+            </div>
+            <div class="products__cards" data-type="console"></div>
+        </section>
+        <section class="products">
+            <div class="products__header">
+                <h2 class="products__title">Diversos</h2>
+                <span class="products__link">
+                    <a href="productos.html?category=divers">
+                        Ver todo
+                        <span class="material-symbols-rounded">
+                            arrow_right_alt
+                        </span>
+                    </a>
+                </span>
+            </div>
+            <div class="products__cards" data-type="divers"></div>
+        </section>
+    </div>
+
     <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/7.0.0/uuid.min.js"></script>
     <script src="./assets/js/script.js" type="module"></script>
 </body>
 

@@ -9,29 +9,14 @@ const productList = async () => {
   }
 };
 
-const createProduct = async ({
-  imgUrl,
-  imgAlt,
-  productTitle,
-  productCategory,
-  productPrice,
-  productDescription,
-}) => {
+const createProduct = async (data) => {
   try {
     const response = await fetch("http://localhost:3000/products", {
       method: "POST",
       headers: {
         "content-Type": "application/json",
       },
-      body: JSON.stringify({
-        productId: uuid.v4(),
-        imgUrl,
-        imgAlt,
-        productTitle,
-        productCategory,
-        productPrice,
-        productDescription,
-      }),
+      body: JSON.stringify(data),
     });
     if (response) {
       return response.json();

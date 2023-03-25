@@ -1,0 +1,8 @@
+.form__error-mesagge{
+    color: red;
+    position: absolute;
+    right: 0;
+    top: 2.5rem;
+    margin: auto;
+    background-color: white;
+}
