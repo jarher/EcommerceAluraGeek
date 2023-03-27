@@ -18,9 +18,9 @@ const renderlistIndex = (productList, isEditable) => {
           productCardboxTemplate(productList[index], isEditable)
         );
       }
-      if (index > 4) {
-        break;
-      }
+      // if (index > 4) {
+      //   break;
+      // }
     }
   }
 };
@@ -33,20 +33,18 @@ const renderAllProducts = (productList, isEditable) => {
 };
 
 const renderSearchProducts = (searchList, isEditable) => {
-  const sections_container = document.querySelector(".sections__container");
-  const results_container = document.createElement("section");
-  results_container.setAttribute("class","section__results");
+  const search_content = document.querySelector(".search__content");
+  const sections_content = document.querySelector(".sections__content");
 
-  const products_container = document.querySelectorAll(".products");
   if (searchList.length !== 0) {
-    products_container.forEach((element) => (element.style.display = "none"));
+    sections_content.style.display = "none";
+    search_content.style.display = "block"
     for (let product of searchList) {
-      results_container.append(productCardboxTemplate(product, isEditable));
+      search_content.append(productCardboxTemplate(product, isEditable));
     }
-    sections_container.prepend(results_container);
   } else {
-    results_container.remove();
-    products_container.forEach((element) => (element.style.display = "block"));
+    sections_content.style.display = "none";
+    sections_content.style.display = "block";
   }
 };
 
@@ -57,7 +55,7 @@ const renderListCategory = (productList, category, isEditable) => {
   products_title.textContent = category;
 
   for (let product of productList) {
-    if (product.productCategory === category.replace(" ", "")) {
+    if (product.productCategory === category) {
       products_cards.append(productCardboxTemplate(product, isEditable));
     }
   }

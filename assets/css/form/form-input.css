@@ -1,6 +1,10 @@
 .form__input {
   font-size: 1.2rem;
   transition: all 0.25s;
+  margin-top: 0.9rem;
+}
+.form__input:focus{
+  margin-top:1rem
 }
 .form__input::placeholder {
   visibility: hidden;
@@ -10,17 +14,14 @@
 .form__input:focus + .form__label {
   font-size: 0.875rem;
   top: 0.4rem;
+  bottom: 0.4rem;
   transition: all 0.25s;
 }
-.login__input:focus{
-    margin-top: 1rem;
-}
+
 @media (min-width: 768rem) {
-  .login__input:focus{
-    margin-top: 1.5rem;
-}
+
   .form__input:not(:placeholder-shown) + .form__label,
   .form__input:focus + .form__label {
-    top: 0.7rem;
+    top: 0.8rem;
   }
 }

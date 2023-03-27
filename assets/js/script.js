@@ -5,7 +5,10 @@ import validateForms from "./controller/validateForms.js";
 import { loginView } from "./view/loginView.js";
 import { mainModulesView } from "./view/mainModulesView.js";
 import { productView } from "./view/productView.js";
-// import header from "./view/templates/header.js";
+import {
+  adminButtonTemplate,
+  adminMenuTemplate,
+} from "./view/templates/adminMenuTemplate.js";
 
 const loginState = adminController.getLoginState();
 let isEditable = false;
@@ -15,7 +18,10 @@ let pathname = location.pathname.replace("/", "").split("?")[0];
 
 const redirect = (url) => (window.location.href = url);
 
-// document.querySelector("html").prepend(header());
+// carga modulos principales y renderiza los productos de la página index
+
+mainModulesView.loadMenu(loginState);
+mainModulesView.loadFooter();
 
 if (pathname === "productos.html") {
   productsController.loadProductsByCategory(isEditable);
@@ -34,6 +40,7 @@ if (pathname === "login.html") {
 if (pathname === "crear-producto.html") {
   if (loginState) {
     productView.loadProductFormCreate();
+    document.querySelector(".menu").append(adminButtonTemplate());
   } else {
     redirect("index.html");
   }
@@ -52,35 +59,33 @@ if (pathname === "editar-producto.html") {
     redirect("index.html");
   }
 }
-// carga modulos principales y renderiza los productos de la página index 
-mainModulesView.loadMenu(loginState);
-mainModulesView.loadFooter();
-productsController.listAllProducts(isEditable);
 
+productsController.listAllProducts(isEditable);
 
 if (loginState === null) {
   adminController.setLoginState();
 }
 
 document.addEventListener("click", async (e) => {
-  const dataset = e.target.dataset;
+  const datatype = e.target.dataset.type;
 
-  if (dataset.type === "create-form") {
+  if (datatype === "create-form") {
     redirect("crear-producto.html");
   }
-  if (dataset.type === "create-product") {
+  if (datatype === "create-product") {
     e.preventDefault();
     productsController.createProduct(e);
+    redirect("editar-productos.html");
   }
-  if (dataset.type === "search") {
+  if (datatype === "search") {
     productsController.searchProduct(isEditable);
     e.preventDefault();
   }
-  if (dataset.type === "delete") {
-    productsController.delProduct(dataset.id);
+  if (datatype === "delete") {
+    productsController.delProduct(e.target.dataset.id);
     redirect("editar-productos.html");
   }
-  if (dataset.type === "loginSubmit") {
+  if (datatype === "loginSubmit") {
     e.preventDefault();
     const data = await adminController.getData();
     const { userEmail, userPassword } = data[0];
@@ -93,10 +98,43 @@ document.addEventListener("click", async (e) => {
       redirect("editar-productos.html");
     }
   }
-  if(dataset.type === "messageSubmit"){
+  if (datatype === "messageSubmit") {
     e.preventDefault();
     footerSubmit();
   }
+  if (datatype === "menuAdmin") {
+    const adminMenu = document.querySelector(".menu__admin-options");
+    if (adminMenu) {
+      closeMenu(adminMenu);
+    } else {
+      document.querySelector(".menu").append(adminMenuTemplate());
+      setTimeout(
+        () =>
+          document
+            .querySelector(".menu__admin-options")
+            .classList.add("opacity-1"),
+        200
+      );
+    }
+  }
+  if(datatype === "closeAdminMenu"){
+    closeMenu(document.querySelector(".menu__admin-options"));
+  }
+  if(datatype === "logout"){
+    adminController.setLoginState(false);
+    redirect("index.html");
+  }
 });
+
+document.querySelector("[data-search]").addEventListener("input", e => {
+  if(e.target.value === ""){
+    document.querySelector(".search__content").style.display = "none";
+    document.querySelector(".sections__content").style.display = "block";
+  }
+})
+const closeMenu = (element) => {
+element.classList.remove("opacity-1");
+setTimeout(() => element.remove(), 200);
+}
 
 validateForms();

@@ -3,6 +3,9 @@
 @import url("./menu-form.css");
 @import url("./menu-form-input.css");
 @import url("./menu-form-submit.css");
+@import url("./menu-admin-options.css");
+@import url("./menu-admin-button.css");
+
 
 .menu {
   background-color: white;

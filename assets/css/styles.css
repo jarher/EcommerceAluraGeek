@@ -33,6 +33,9 @@ textarea {
 input:focus {
   outline: none;
 }
+.opacity-1{
+  opacity: 1!important;
+}
 .hide{
   display: none;
 }

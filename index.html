@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<!-- <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
-<body> -->
+<body>
     <div class="banner">
         <h1 class="banner__title">Febrero promocional</h1>
         <p class="banner__description">Productos seleccionados con 33% de descuento</p>
-        <button class="banner__button"><a href="productos.html?category=console">Ver consolas</a></button>
+        <button class="banner__button"><a href="productos.html?category=consolas">Ver consolas</a></button>
     </div>
-    <div class="sections__container">
+    <div class="search__content"></div>
+    <div class="sections__content">
         <section class="products">
             <div class="products__header">
                 <h2 class="products__title">Star Wars</h2>
@@ -30,13 +31,13 @@
                     </a>
                 </span>
             </div>
-            <div class="products__cards" data-type="starwars"></div>
+            <div class="products__cards" data-type="star wars"></div>
         </section>
         <section class="products">
             <div class="products__header">
                 <h2 class="products__title">Consolas</h2>
                 <span class="products__link">
-                    <a href="productos.html?category=console">
+                    <a href="productos.html?category=consolas">
                         Ver todo
                         <span class="material-symbols-rounded">
                             arrow_right_alt
@@ -44,13 +45,13 @@
                     </a>
                 </span>
             </div>
-            <div class="products__cards" data-type="console"></div>
+            <div class="products__cards" data-type="consolas"></div>
         </section>
         <section class="products">
             <div class="products__header">
                 <h2 class="products__title">Diversos</h2>
                 <span class="products__link">
-                    <a href="productos.html?category=divers">
+                    <a href="productos.html?category=diversos">
                         Ver todo
                         <span class="material-symbols-rounded">
                             arrow_right_alt
@@ -58,10 +59,11 @@
                     </a>
                 </span>
             </div>
-            <div class="products__cards" data-type="divers"></div>
+            <div class="products__cards" data-type="diversos"></div>
         </section>
     </div>
 
+    </div>
     <footer></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/7.0.0/uuid.min.js"></script>
     <script src="./assets/js/script.js" type="module"></script>

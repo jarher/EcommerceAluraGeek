@@ -5,6 +5,169 @@
       "userPassword": "aluraGeekAdmin11"
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "id": "60866203-4fa1-4f4e-9030-f0be4b48044f",
+      "imgUrl": "assets\\img\\clone-trooper-cup.png",
+      "imgAlt": "vaso clone trooper",
+      "productTitle": "vaso clone trooper",
+      "productCategory": "star wars",
+      "productPrice": "5.95",
+      "productDescription": "vaso de porcelana "
+    },
+    {
+      "id": "a4327a67-7fed-4d86-807f-5af6083bb136",
+      "imgUrl": "assets\\img\\darth-vader-toy.png",
+      "imgAlt": "muñeco darth vader",
+      "productTitle": "juguete darth vader",
+      "productCategory": "star wars",
+      "productPrice": "19.95",
+      "productDescription": "Muñeco darth vader"
+    },
+    {
+      "id": "64c85c4a-98b9-4269-9f0e-143524d7dc35",
+      "imgUrl": "assets\\img\\yoda-toy-2.png",
+      "imgAlt": "muñeco yoda",
+      "productTitle": "juguete yoda",
+      "productCategory": "star wars",
+      "productPrice": "5.66",
+      "productDescription": "Muñeco yoda, tamaño mediano"
+    },
+    {
+      "id": "8faffff7-d1a3-452a-b2fc-bf0092a29519",
+      "imgUrl": "assets\\img\\clone-trooper-toy.png",
+      "imgAlt": "muñeco clone trooper",
+      "productTitle": "juguete clone trooper",
+      "productCategory": "star wars",
+      "productPrice": "10.45",
+      "productDescription": "muñeco clone trooper articulado, tamaño mediano"
+    },
+    {
+      "id": "523202b5-7927-4e52-af23-bb4b5e7e9b91",
+      "imgUrl": "assets\\img\\yoda-toy.png",
+      "imgAlt": "muñeco yoda pequeño",
+      "productTitle": "juguete yoda",
+      "productCategory": "star wars",
+      "productPrice": "6.55",
+      "productDescription": "Muñeco yoda, tamaño pequeño"
+    },
+    {
+      "id": "070d6afc-54b3-4cca-b8d2-e18b4fc6a49e",
+      "imgUrl": "assets\\img\\darth-sidious-toy.png",
+      "imgAlt": "muñeco darth sidious",
+      "productTitle": "juguete darth sidious",
+      "productCategory": "star wars",
+      "productPrice": "20.99",
+      "productDescription": "Muñeco darth sidious, tamaño grande"
+    },
+    {
+      "id": "0865095b-fa4f-49ec-bf9f-cf742bddb6d8",
+      "imgUrl": "assets\\img\\consola-xbox-one.png",
+      "imgAlt": "consola xbox one",
+      "productTitle": "consola xbox one",
+      "productCategory": "consolas",
+      "productPrice": "60.00",
+      "productDescription": "Consola xbox one color blanco"
+    },
+    {
+      "id": "0f8af301-05b4-4c49-8376-c383b3ddfadf",
+      "imgUrl": "assets\\img\\consola-ps5-standart.png",
+      "imgAlt": "consola ps5 estandar",
+      "productTitle": "consola ps5 estandar",
+      "productCategory": "consolas",
+      "productPrice": "75.00",
+      "productDescription": "consola ps5 "
+    },
+    {
+      "id": "60bfc085-d26e-4927-9bc7-307ee63ce1af",
+      "imgUrl": "assets\\img\\consola-mini-retro-620.png",
+      "imgAlt": "consola mini retro 620",
+      "productTitle": "mini consola retro nintendo 620",
+      "productCategory": "consolas",
+      "productPrice": "30.00",
+      "productDescription": "Consola nintendo "
+    },
+    {
+      "id": "e9fd4c1d-ee1a-45ce-baed-f832f5900c21",
+      "imgUrl": "assets\\img\\consola-nintendo-switch.png",
+      "imgAlt": "consola nintendo switch",
+      "productTitle": "consola nintendo switch",
+      "productCategory": "consolas",
+      "productPrice": "65.55",
+      "productDescription": "consola nintendo colores rojo y azul"
+    },
+    {
+      "id": "d8642b7d-7520-445f-b2de-b981052323ef",
+      "imgUrl": "assets\\img\\consola-playstation-4.png",
+      "imgAlt": "consola playstation 4",
+      "productTitle": "consola playstation 4",
+      "productCategory": "consolas",
+      "productPrice": "80.00",
+      "productDescription": "consola playstation 4"
+    },
+    {
+      "id": "c4d240a5-9179-4738-8f51-56310283ffd0",
+      "imgUrl": "assets\\img\\consola-gameboy.png",
+      "imgAlt": "consola gameboy",
+      "productTitle": "consola gameboy",
+      "productCategory": "consolas",
+      "productPrice": "20.55",
+      "productDescription": "consola retro gameboy"
+    },
+    {
+      "id": "4ccdf5e1-60f4-45e9-8bbc-0f4e9abe3b31",
+      "imgUrl": "assets\\img\\save-key-bank.png",
+      "imgAlt": "alcancía save key",
+      "productTitle": "alcancía save key",
+      "productCategory": "diversos",
+      "productPrice": "5.65",
+      "productDescription": "Alcancía de ahorros en forma de tecla"
+    },
+    {
+      "id": "90a59b3c-5b9d-4c0e-9fe2-f3f883da17d4",
+      "imgUrl": "assets\\img\\victorinox-secure-pro-usb-drive.png",
+      "imgAlt": "navaja multiusos usb",
+      "productTitle": "navaja multiusos usb",
+      "productCategory": "diversos",
+      "productPrice": "7.45",
+      "productDescription": "navaja con memoria usb incluida"
+    },
+    {
+      "id": "73afd289-ffa1-4f64-996b-57097bf1d8db",
+      "imgUrl": "assets\\img\\sonic-toy.png",
+      "imgAlt": "muñeco sonic",
+      "productTitle": "muñeco sonic",
+      "productCategory": "diversos",
+      "productPrice": "5.66",
+      "productDescription": "Muñeco sonic tamaño medio"
+    },
+    {
+      "id": "ed36fc3d-da0d-495f-b26f-db833817d5fd",
+      "imgUrl": "assets\\img\\radio-despertador.png",
+      "imgAlt": "radio despertador",
+      "productTitle": "radio despertador",
+      "productCategory": "diversos",
+      "productPrice": "9.99",
+      "productDescription": "radio despertador am-fm "
+    },
+    {
+      "id": "99e411a7-0277-4e02-b2f6-4fec76a3a7fd",
+      "imgUrl": "assets\\img\\casco-realidad-virtual.png",
+      "imgAlt": "casco realidad virtual",
+      "productTitle": "casco realidad virtual",
+      "productCategory": "diversos",
+      "productPrice": "20.25",
+      "productDescription": "casco para visualizar imagenes 3D de realidad virtual"
+    },
+    {
+      "id": "21b60275-8115-46c2-8e29-1e70e45e8a3d",
+      "imgUrl": "assets\\img\\pikachu-toy.png",
+      "imgAlt": "muñeco pikachu",
+      "productTitle": "muñeco pikachu",
+      "productCategory": "diversos",
+      "productPrice": "4.50",
+      "productDescription": "Muñeco pikachu"
+    }
+  ],
   "messages": []
 }

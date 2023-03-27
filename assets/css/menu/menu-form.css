@@ -11,6 +11,7 @@
   border-radius: 2rem;
   padding: 2%;
   z-index: 1;
+  order: 3;
   background-color: rgb(241, 241, 241);
 }
 @media (min-width:768px){

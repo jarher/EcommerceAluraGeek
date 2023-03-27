@@ -13,7 +13,6 @@ const listEditAllProducts = async (isEditable) => {
 
 const loadProductsByCategory = async (isEditable) => {
   const productList = await model.getAllProducts();
-
   const url = new URL(window.location);
   const category = url.searchParams.get("category");
 
@@ -34,10 +33,10 @@ const createProduct = async (e) => {
   try {
     const imgUrl = document.querySelector("[data-image-url]").value;
     const imgAlt = document.querySelector("[data-image-alt]").value;
-    const productTitle = document.querySelector(
+    const productTitle = document.querySelector("[data-product-name]").value;
+    const productCategory = document.querySelector(
       "[data-category-product]"
     ).value;
-    const productCategory = document.querySelector("[data-product-name]").value;
     const productPrice = document.querySelector("[data-product-price]").value;
     const productDescription = document.querySelector(
       "[data-product-description]"
@@ -83,14 +82,10 @@ const searchProduct = async (isEditable) => {
     );
     productView.renderSearchProducts(result, isEditable);
   } else {
-    document
-      .querySelectorAll(".products")
-      .forEach((element) => (element.style.display = "block"));
-   document.querySelector(".section__results").remove();
-    }
+    document.querySelector(".sections__content").style.display = "block";
+    document.querySelector(".search__content").style.display = "none";
+  }
 };
-
-
 
 export const productsController = {
   listAllProducts,

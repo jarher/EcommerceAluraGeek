@@ -10,7 +10,7 @@ const productCardboxTemplate = (
 ) => {
   const editTool = `
     <div class="product__card__edit-bar">
-        <button class="product__edit__button">
+        <button class="product__edit__button" data-type="delete">
            <span class="material-symbols-rounded" title="eliminar" data-type="delete" data-id="${id}">
               delete
             </span>
