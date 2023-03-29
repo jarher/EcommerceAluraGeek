@@ -109,6 +109,7 @@ const editProduct = async (e) => {
     loadModal(response);
   }
 };
+
 const getProductData = async () => {
   const url = new URL(window.location);
 

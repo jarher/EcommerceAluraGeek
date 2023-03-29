@@ -1,25 +1,20 @@
 import sendMessage from "../model/userModel.js";
+import loadModal from "../view/modal.js";
 
-const footerSubmit = async () => {
-    try {
-       const userName = document.querySelector("[data-username]");
-       const userMessage = document.querySelector("[data-usermessage]");
+const footerSubmit = async (e) => {
+  e.preventDefault();
+  const userName = document.querySelector("[data-username]").value;
+  const userMessage = document.querySelector("[data-usermessage]").value;
 
-       if (userName && userMessage) {
-         const data = {
-           id: uuid.v4(),
-           userName,
-           userMessage,
-         };
-         const response = await sendMessage(data);
-         if(response){
-          console.log(response)
-         }
-       } 
-    } catch (error) {
-        console.log(error);
-    }
-  
+  if (userName && userMessage) {
+    const data = {
+      id: uuid.v4(),
+      userName,
+      userMessage,
+    };
+    const response = await sendMessage(data);
+    loadModal(response);
+  }
 };
 
 export default footerSubmit;

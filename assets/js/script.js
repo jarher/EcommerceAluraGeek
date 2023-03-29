@@ -4,7 +4,6 @@ import { productsController } from "./controller/productsController.js";
 import validateForms from "./controller/validateForms.js";
 import { loginView } from "./view/loginView.js";
 import { mainModulesView } from "./view/mainModulesView.js";
-import loadModal from "./view/modal.js";
 import { productView } from "./view/productView.js";
 import { adminMenuTemplate } from "./view/templates/adminMenuTemplate.js";
 
@@ -91,7 +90,6 @@ document.addEventListener("click", async (e) => {
     e.preventDefault();
     productsController.editProduct(e);
     redirect("editar-productos.html");
-
   }
   if (datatype === "search") {
     productsController.searchProduct(isEditable);
@@ -117,7 +115,7 @@ document.addEventListener("click", async (e) => {
   }
   if (datatype === "messageSubmit") {
     e.preventDefault();
-    footerSubmit();
+    footerSubmit(e);
   }
   if (datatype === "menuAdmin") {
     const adminMenu = document.querySelector(".menu__admin-options");
@@ -147,12 +145,16 @@ document.addEventListener("click", async (e) => {
     setTimeout(() => modal.remove(), 500);
   }
 });
-
+//blanqueo del contenedor de resultados de búsqueda
 document.querySelector("[data-search]").addEventListener("input", (e) => {
   if (e.target.value === "") {
     productsController.resetSearch();
   }
 });
+
+document
+  .querySelector("form")
+  .addEventListener("submit", (e) => e.preventDefault());
 
 const closeMenu = (element) => {
   element.classList.remove("opacity-1");

@@ -17,7 +17,7 @@ const formTemplate = (value, object) => {
 };
 
 const footerFormTemplate = `
-    <form class="form">
+    <form class="form" method="POST">
         <div class="form__wrapper">
           <input class="form__input" type="text" name="username" id="username" placeholder="nombre"
           data-username required>
@@ -29,7 +29,7 @@ const footerFormTemplate = `
           data-usermessage placeholder="Escribe tu mensaje" required></textarea>
           <span class="form__error-mesagge"></span>
         </div>
-        <button class="form__button footer__button" type="submit" data-type="messageSubmit">Enviar mensaje</button>
+        <button class="form__button footer__button" data-type="messageSubmit">Enviar mensaje</button>
     </form>
 `;
 
