@@ -16,14 +16,6 @@
 @import url("./product-card/product-edit-button.css");
 
 .products {
-  padding: 1rem;
   box-sizing: border-box;
 }
-@media (min-width: 1024px) {
-  .products,
-  .products__starwars,
-  .products__console,
-  .products__divers {
-    margin: 1rem 6.25rem;
-  }
-}
+

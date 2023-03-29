@@ -15,8 +15,3 @@
         padding: 1rem;
     }
 }
-@media (min-width:1024px) {
-    .product{
-        padding: 3.25rem 6.25rem;
-    }
-}

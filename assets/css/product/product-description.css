@@ -16,7 +16,7 @@
 }
 @media (min-width: 1024px) {
   .product__description {
-    flex: 3;
+    width: auto;
     padding: 1rem;
   }
 }

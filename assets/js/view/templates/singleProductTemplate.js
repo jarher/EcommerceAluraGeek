@@ -3,7 +3,6 @@ const singleProductTemplate = ({imgUrl, imgAlt, productTitle, productPrice, prod
     product_container.setAttribute("class", "product__container");
 
     const template = ` 
-<div class="product__container">
     <div class="product__image">
         <img src="${imgUrl}" alt="${imgAlt}">
     </div>
@@ -14,7 +13,6 @@ const singleProductTemplate = ({imgUrl, imgAlt, productTitle, productPrice, prod
             ${productDescription}
         </p>
     </div>
-</div>
 `;
 product_container.innerHTML = template;
 

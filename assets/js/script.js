@@ -4,11 +4,9 @@ import { productsController } from "./controller/productsController.js";
 import validateForms from "./controller/validateForms.js";
 import { loginView } from "./view/loginView.js";
 import { mainModulesView } from "./view/mainModulesView.js";
+import loadModal from "./view/modal.js";
 import { productView } from "./view/productView.js";
-import {
-  adminButtonTemplate,
-  adminMenuTemplate,
-} from "./view/templates/adminMenuTemplate.js";
+import { adminMenuTemplate } from "./view/templates/adminMenuTemplate.js";
 
 const loginState = adminController.getLoginState();
 let isEditable = false;
@@ -40,7 +38,6 @@ if (pathname === "login.html") {
 if (pathname === "crear-producto.html") {
   if (loginState) {
     productView.loadProductFormCreate();
-    document.querySelector(".menu").append(adminButtonTemplate());
   } else {
     redirect("index.html");
   }
@@ -61,6 +58,19 @@ if (pathname === "editar-producto.html") {
 }
 
 productsController.listAllProducts(isEditable);
+//selección de unos pocos productos al inicio
+document.querySelectorAll(".products").forEach((products) => {
+  products
+    .querySelectorAll(".product__card__box")
+    .forEach((productBox, index) => {
+      if (window_width < 1024 && index > 3) {
+        productBox.remove();
+      }
+      if (window_width >= 1024 && index > 5) {
+        productBox.remove();
+      }
+    });
+});
 
 if (loginState === null) {
   adminController.setLoginState();
@@ -77,13 +87,20 @@ document.addEventListener("click", async (e) => {
     productsController.createProduct(e);
     redirect("editar-productos.html");
   }
+  if (datatype === "edit-product") {
+    e.preventDefault();
+    productsController.editProduct(e);
+    redirect("editar-productos.html");
+
+  }
   if (datatype === "search") {
     productsController.searchProduct(isEditable);
     e.preventDefault();
   }
   if (datatype === "delete") {
-    productsController.delProduct(e.target.dataset.id);
-    redirect("editar-productos.html");
+    if (productsController.delProduct(e.target.dataset.id)) {
+      redirect("editar-productos.html");
+    }
   }
   if (datatype === "loginSubmit") {
     e.preventDefault();
@@ -117,24 +134,29 @@ document.addEventListener("click", async (e) => {
       );
     }
   }
-  if(datatype === "closeAdminMenu"){
+  if (datatype === "closeAdminMenu") {
     closeMenu(document.querySelector(".menu__admin-options"));
   }
-  if(datatype === "logout"){
+  if (datatype === "logout") {
     adminController.setLoginState(false);
     redirect("index.html");
   }
+  if (datatype === "closeModal") {
+    const modal = document.querySelector(".modal");
+    modal.classList.remove("opacity-1");
+    setTimeout(() => modal.remove(), 500);
+  }
 });
 
-document.querySelector("[data-search]").addEventListener("input", e => {
-  if(e.target.value === ""){
-    document.querySelector(".search__content").style.display = "none";
-    document.querySelector(".sections__content").style.display = "block";
+document.querySelector("[data-search]").addEventListener("input", (e) => {
+  if (e.target.value === "") {
+    productsController.resetSearch();
   }
-})
+});
+
 const closeMenu = (element) => {
-element.classList.remove("opacity-1");
-setTimeout(() => element.remove(), 200);
-}
+  element.classList.remove("opacity-1");
+  setTimeout(() => element.remove(), 200);
+};
 
 validateForms();

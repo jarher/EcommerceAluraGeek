@@ -76,6 +76,7 @@ const adminCreateTemplate = () => {
 };
 
 const adminEditTemplate = ({
+  id,
   imgUrl,
   imgAlt,
   productCategory,
@@ -85,27 +86,27 @@ const adminEditTemplate = ({
 }) => {
   const template = `
         <div class="form__wrapper">
-            <input class="form__input" type="text" name="imageUrlProduct" id="imageUrlProduct" placeholder="imageUrlProduct" value=${imgUrl} data-image-url required>
+            <input class="form__input" type="text" name="imageUrlProduct" id="imageUrlProduct" placeholder="imageUrlProduct" value="${imgUrl}" data-image-url required>
             <label class="form__label" for="imageUrlProduct">URL de la imagen</label>
             <span class="form__error-mesagge"></span>
         </div>
         <div class="form__wrapper">
-            <input class="form__input" type="text" name="imageDescription" id="imageDescription" placeholder="descripción de la imagen" value=${imgAlt} data-image-alt required>
+            <input class="form__input" type="text" name="imageDescription" id="imageDescription" placeholder="descripción de la imagen" value="${imgAlt}" data-image-alt required>
             <label class="form__label" for="imageDescription">Descripción de la imagen</label>
             <span class="form__error-mesagge"></span>
         </div>
         <div class="form__wrapper">
-            <input class="form__input" type="text" name="categoryProduct" id="categoryProduct" placeholder="categoryProduct" value=${productCategory} data-category-product required>
+            <input class="form__input" type="text" name="categoryProduct" id="categoryProduct" placeholder="categoryProduct" value="${productCategory}" data-category-product required>
             <label class="form__label" for="categoryProduct">Categoría</label>
             <span class="form__error-mesagge"></span>
         </div>
         <div class="form__wrapper">
-            <input class="form__input" type="text" name="productName" id="productName" placeholder="productName" value=${productTitle} data-product-name required>
+            <input class="form__input" type="text" name="productName" id="productName" placeholder="productName" value="${productTitle}" data-product-name required>
             <label class="form__label" for="productName">Nombre del producto</label>
             <span class="form__error-mesagge"></span>
         </div>
         <div class="form__wrapper">
-            <input class="form__input" type="text" name="productPrice" id="productPrice" placeholder="productPrice" value=${productPrice} data-product-price required>
+            <input class="form__input" type="text" name="productPrice" id="productPrice" placeholder="productPrice" value="${productPrice}" data-product-price required>
             <label class="form__label" for="productPrice">Precio del producto</label>
             <span class="form__error-mesagge"></span>
         </div>
@@ -114,7 +115,7 @@ const adminEditTemplate = ({
                 placeholder="Ingrese una descripción del producto" required>${productDescription}</textarea>
                 <span class="form__error-mesagge"></span>
         </div>
-        <button class="form__button create__form__button" type="submit" data-type="create-product">Editar producto</button>
+        <button class="form__button create__form__button" type="submit" data-type="edit-product" data-id=${id}>Editar producto</button>
 `;
 
   const form = document.createElement("form");

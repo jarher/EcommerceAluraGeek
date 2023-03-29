@@ -5,7 +5,7 @@ const productList = async () => {
       return response.json();
     }
   } catch (error) {
-    console.log(error);
+    return 'hubo un error inesperado, inténtelo más tarde';
   }
 };
 
@@ -22,7 +22,7 @@ const createProduct = async (data) => {
       return response.json();
     }
   } catch (error) {
-    console.log(error);
+    return "Ocurrió un error al crear el producto, inténtalo más tarde";
   }
 };
 
@@ -34,21 +34,21 @@ const getProduct = async (productId) => {
       return response.json();
     }
   } catch (error) {
-    console.log(error);
+    return "Ocurrió un error al obtener el producto. Inténtelo de nuevo más tarde";
   }
 };
 
 const updateProduct = async ({
-  productId,
   imgUrl,
   imgAlt,
   productCategory,
   productTitle,
   productPrice,
   productDescription,
-}) => {
+}, id) => {
   try {
-    return await fetch(`http://localhost:3000/products/${productId}`, {
+    console.log(id)
+    return await fetch(`http://localhost:3000/products/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const updateProduct = async ({
       }),
     });
   } catch (error) {
-    console.log(error);
+    return "Hubo un error al actualizar los datos. Inténtelo de nuevo más tarde";
   }
 };
 
@@ -73,9 +73,10 @@ const deleteProduct = async (id) => {
       method: "DELETE",
     });
   } catch (error) {
-    console.log(error);
+    return "Hubo un error al eliminar el producto. Inténtelo de nuevo más tarde";
   }
 };
+
 export const makeRequest = {
   productList,
   createProduct,

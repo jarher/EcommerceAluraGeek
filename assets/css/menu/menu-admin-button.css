@@ -1,5 +1,6 @@
+.menu__admin-button a{
+    font-size: 0.8rem !important;
+}
 .menu__admin-button{
-    color: #2a7ae4;
-    font-weight: 600;
-    order:2
+    width: auto;
 }

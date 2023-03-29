@@ -9,7 +9,10 @@ const loadProductFormCreate = () => {
 };
 
 const renderlistIndex = (productList, isEditable) => {
+  let window_width = screen.availWidth;
+
   const product_cards = document.querySelectorAll(".products__cards");
+
   for (let productWrapper of product_cards) {
     const datatype = productWrapper.dataset.type;
     for (let index in productList) {
@@ -18,9 +21,6 @@ const renderlistIndex = (productList, isEditable) => {
           productCardboxTemplate(productList[index], isEditable)
         );
       }
-      // if (index > 4) {
-      //   break;
-      // }
     }
   }
 };
@@ -38,7 +38,7 @@ const renderSearchProducts = (searchList, isEditable) => {
 
   if (searchList.length !== 0) {
     sections_content.style.display = "none";
-    search_content.style.display = "block"
+    search_content.style.display = "flex";
     for (let product of searchList) {
       search_content.append(productCardboxTemplate(product, isEditable));
     }
@@ -50,9 +50,10 @@ const renderSearchProducts = (searchList, isEditable) => {
 
 const renderListCategory = (productList, category, isEditable) => {
   const products_cards = document.querySelector(".products__cards");
-  const products_title = document.querySelector(".products__title");
 
-  products_title.textContent = category;
+  if (document.querySelector(".products__title")) {
+    document.querySelector(".products__title").textContent = category;
+  }
 
   for (let product of productList) {
     if (product.productCategory === category) {

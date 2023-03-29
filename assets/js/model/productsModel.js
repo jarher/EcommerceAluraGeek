@@ -6,7 +6,7 @@ const getProduct = async (id) => await makeRequest.getProduct(id);
 
 const createProduct = async (data) => await makeRequest.createProduct(data);
 
-const updateProduct = async (data) => await makeRequest.updateProduct(data);
+const updateProduct = async (data, id) => await makeRequest.updateProduct(data, id);
 
 const deleteProduct = async (id) => await makeRequest.deleteProduct(id);
 
