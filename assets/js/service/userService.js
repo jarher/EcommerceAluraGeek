@@ -8,10 +8,10 @@ const createMessage = async (data) => {
             body:JSON.stringify(data)
         });
         if(response.ok){
-            return "¡Mensaje enviado con éxito!";
+            return response.status;
         }
     } catch (error) {
-        return "Hubo un error al enviar el mensaje, inténtelo de nuevo";
+        return response.status;
     }
 }
 

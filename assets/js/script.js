@@ -22,55 +22,55 @@ mainModulesView.loadFooter();
 
 if (pathname === "productos.html") {
   productsController.loadProductsByCategory(isEditable);
-}
-if (pathname === "producto.html") {
+} else if (pathname === "producto.html") {
   productsController.loadSingleProduct();
-}
-if (pathname === "login.html") {
+} else if (pathname === "login.html") {
   if (loginState) {
     redirect("editar-productos.html");
   } else {
     loginView.loadLoginForm();
   }
   adminController.login();
-}
-if (pathname === "crear-producto.html") {
+} else if (pathname === "crear-producto.html") {
   if (loginState) {
     productView.loadProductFormCreate();
   } else {
     redirect("index.html");
   }
-}
-if (pathname === "editar-productos.html") {
+} else if (pathname === "editar-productos.html") {
   if (loginState) {
     productsController.listEditAllProducts(!isEditable);
   } else {
     redirect("index.html");
   }
-}
-if (pathname === "editar-producto.html") {
+} else if (pathname === "editar-producto.html") {
   if (loginState) {
     productsController.getProductData();
   } else {
     redirect("index.html");
   }
+} else if (pathname === "confirmacion.html") {
+  const location = new URL(window.location);
+  const params = location.searchParams.get("message");
+  document.querySelector(".message__content").textContent = params;
+} else {
+  productsController.listAllProducts(isEditable);
+  //selección de unos pocos productos al inicio
+  document.querySelectorAll(".products").forEach((products) => {
+    products
+      .querySelectorAll(".product__card__box")
+      .forEach((productBox, index) => {
+        if (window_width < 1024 && index > 3) {
+          productBox.remove();
+        }
+        if (window_width >= 1024 && index > 5) {
+          productBox.remove();
+        }
+      });
+  });
 }
 
-productsController.listAllProducts(isEditable);
-//selección de unos pocos productos al inicio
-document.querySelectorAll(".products").forEach((products) => {
-  products
-    .querySelectorAll(".product__card__box")
-    .forEach((productBox, index) => {
-      if (window_width < 1024 && index > 3) {
-        productBox.remove();
-      }
-      if (window_width >= 1024 && index > 5) {
-        productBox.remove();
-      }
-    });
-});
-
+// si el administrador no está logeado guarda el estado como false
 if (loginState === null) {
   adminController.setLoginState();
 }
@@ -82,12 +82,10 @@ document.addEventListener("click", async (e) => {
     redirect("crear-producto.html");
   }
   if (datatype === "create-product") {
-    e.preventDefault();
     productsController.createProduct(e);
     redirect("editar-productos.html");
   }
   if (datatype === "edit-product") {
-    e.preventDefault();
     productsController.editProduct(e);
     redirect("editar-productos.html");
   }
@@ -114,8 +112,16 @@ document.addEventListener("click", async (e) => {
     }
   }
   if (datatype === "messageSubmit") {
-    e.preventDefault();
-    footerSubmit(e);
+    let message;
+    document
+      .querySelector("footer .form")
+      .addEventListener("submit", (e) => e.preventDefault());
+    if ((await footerSubmit()) === 201) {
+      message = "mensaje enviado exitosamente";
+    } else {
+      message = "hubo un error inesperado, inténtelo de nuevo más tarde";
+    }
+    window.location.href = `confirmacion.html?message=${message}`;
   }
   if (datatype === "menuAdmin") {
     const adminMenu = document.querySelector(".menu__admin-options");
@@ -151,10 +157,6 @@ document.querySelector("[data-search]").addEventListener("input", (e) => {
     productsController.resetSearch();
   }
 });
-
-document
-  .querySelector("form")
-  .addEventListener("submit", (e) => e.preventDefault());
 
 const closeMenu = (element) => {
   element.classList.remove("opacity-1");
