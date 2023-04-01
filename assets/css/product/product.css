@@ -5,13 +5,17 @@
 @import url("./product-price.css");
 @import url("./product-similar.css");
 @import url("./product-similar-title.css");
+@import url("./product-buttons.css");
+@import url("./product-button.css");
+@import url("./product-add.css");
+@import url("./product-quantity.css");
 
-.product{
-    display: flex;
-    flex-direction: column;
+.product {
+  display: flex;
+  flex-direction: column;
 }
-@media (min-width:768px) {
-    .product{
-        padding: 1rem;
-    }
+@media (min-width: 768px) {
+  .product {
+    padding: 1rem;
+  }
 }

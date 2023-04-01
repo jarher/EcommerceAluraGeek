@@ -1,6 +1,7 @@
 import { model } from "../model/productsModel.js";
 import loadModal from "../view/modal.js";
 import { productView } from "../view/productView.js";
+import { userController } from "./userController.js";
 
 const listAllProducts = async (isEditable) => {
   const response = await model.getAllProducts();
@@ -45,7 +46,7 @@ const loadSingleProduct = async () => {
 
     const category = responseProduct.productCategory;
 
-    productView.renderSingleProduct(responseProduct);
+    productView.renderSingleProduct(responseProduct, userController.getUserState());
 
     productView.renderListCategory(filterList, category, false);
   } else {

@@ -1,4 +1,5 @@
-const singleProductTemplate = ({imgUrl, imgAlt, productTitle, productPrice, productDescription}) => {
+const singleProductTemplate = ({imgUrl, imgAlt, productTitle, productPrice, productDescription}, isUser) => {
+    
     const product_container = document.createElement('div');
     product_container.setAttribute("class", "product__container");
 
@@ -12,7 +13,14 @@ const singleProductTemplate = ({imgUrl, imgAlt, productTitle, productPrice, prod
         <p>
             ${productDescription}
         </p>
+        ${(isUser)?`<div class="product__buttons">
+            <button class="product__button">-</button>
+            <span class="product__quantity">cantidad</span>
+            <button class="product__button">+</button>
+            <span class="product__button product__add">Agregar al carrito</span>
+        </div>`:''}
     </div>
+    
 `;
 product_container.innerHTML = template;
 

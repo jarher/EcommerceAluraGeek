@@ -1,0 +1,7 @@
+.product__button {
+    padding: 1%;
+    background-color: #d0cfcf;
+    font-size: 2rem;
+    width: 10%;
+    cursor: pointer;
+}

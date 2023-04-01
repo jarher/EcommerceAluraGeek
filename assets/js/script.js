@@ -1,13 +1,17 @@
 import { adminController } from "./controller/adminController.js";
 import footerSubmit from "./controller/footerController.js";
+import { loginController } from "./controller/loginController.js";
 import { productsController } from "./controller/productsController.js";
+import { userController } from "./controller/userController.js";
 import validateForms from "./controller/validateForms.js";
+import { userModel } from "./model/userModel.js";
 import { loginView } from "./view/loginView.js";
 import { mainModulesView } from "./view/mainModulesView.js";
 import { productView } from "./view/productView.js";
 import { adminMenuTemplate } from "./view/templates/adminMenuTemplate.js";
 
-const loginState = adminController.getLoginState();
+const adminState = adminController.getAdminState();
+const userState = userController.getUserState();
 let isEditable = false;
 
 const location = new URL(window.location);
@@ -17,7 +21,7 @@ const redirect = (url) => (window.location.href = url);
 
 // carga modulos principales y renderiza los productos de la página index
 
-mainModulesView.loadMenu(loginState);
+mainModulesView.loadMenu({ adminState, userState });
 mainModulesView.loadFooter();
 
 if (pathname === "productos.html") {
@@ -25,12 +29,14 @@ if (pathname === "productos.html") {
 } else if (pathname === "producto.html") {
   productsController.loadSingleProduct();
 } else if (pathname === "login.html") {
-  if (loginState) {
+  if (adminState) {
     redirect("editar-productos.html");
+  } else if (userState) {
+    redirect("index.html");
   } else {
     loginView.loadLoginForm();
   }
-  adminController.login();
+  loginController.login();
 } else if (pathname === "crear-producto.html") {
   if (loginState) {
     productView.loadProductFormCreate();
@@ -38,7 +44,7 @@ if (pathname === "productos.html") {
     redirect("index.html");
   }
 } else if (pathname === "editar-productos.html") {
-  if (loginState) {
+  if (adminState) {
     productsController.listEditAllProducts(!isEditable);
   } else {
     redirect("index.html");
@@ -56,23 +62,26 @@ if (pathname === "productos.html") {
 } else {
   productsController.listAllProducts(isEditable);
   //selección de unos pocos productos al inicio
-  document.querySelectorAll(".products").forEach((products) => {
-    products
-      .querySelectorAll(".product__card__box")
-      .forEach((productBox, index) => {
-        if (window_width < 1024 && index > 3) {
-          productBox.remove();
-        }
-        if (window_width >= 1024 && index > 5) {
-          productBox.remove();
-        }
-      });
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".products").forEach((products) => {
+      products
+        .querySelectorAll(".product__card__box")
+        .forEach((productBox, index) => {
+          if (window_width < 1024 && index > 3) {
+            productBox.remove();
+          }
+          if (window_width >= 1024 && index > 5) {
+            productBox.remove();
+          }
+        });
+    });
   });
 }
 
-// si el administrador no está logeado guarda el estado como false
-if (loginState === null) {
-  adminController.setLoginState();
+// si el administrador y usuario no está logeado guarda el estado como false
+if (adminState === null && userState === null) {
+  adminController.setAdminState();
+  userController.setUserState();
 }
 
 document.addEventListener("click", async (e) => {
@@ -100,15 +109,21 @@ document.addEventListener("click", async (e) => {
   }
   if (datatype === "loginSubmit") {
     e.preventDefault();
-    const data = await adminController.getData();
-    const { userEmail, userPassword } = data[0];
-
+    const data = await userModel.getAllUser();
     const inputEmail = document.querySelector("[data-login-email]").value;
     const inputPassword = document.querySelector("[data-login-password]").value;
 
-    if (userEmail === inputEmail && inputPassword === userPassword) {
-      adminController.setLoginState(true);
+    const user = data.filter(
+      (item) =>
+        item.userEmail === inputEmail && item.userPassword === inputPassword
+    )[0];
+     
+    if (user.isAdmin) {
+      adminController.setAdminState(true);
       redirect("editar-productos.html");
+    } else {
+      userController.setUserState(true);
+      redirect("index.html");
     }
   }
   if (datatype === "messageSubmit") {

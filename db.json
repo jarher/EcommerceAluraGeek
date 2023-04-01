@@ -1,10 +1,4 @@
 {
-  "admin": [
-    {
-      "userEmail": "jefferh33@gmail.com",
-      "userPassword": "aluraGeekAdmin11"
-    }
-  ],
   "products": [
     {
       "imgUrl": "assets\\img\\yoda-toy-2.png",
@@ -170,25 +164,21 @@
     }
   ],
   "messages": [
+  ],
+  "user":[
     {
-      "id": "b4cbd6d9-0681-4e77-9daa-f090fc8ea3e0",
-      "userName": "fdfdf",
-      "userMessage": "dfdfdf"
+      "id": null,
+      "userEmail": "jefferh33@gmail.com",
+      "userPassword": "aluraGeekAdmin11",
+      "products": null,
+      "isAdmin": true
     },
     {
-      "id": "81c47001-e93d-43fd-9125-91ae648d2c10",
-      "userName": "fdfdf",
-      "userMessage": "dfdfdf"
-    },
-    {
-      "id": "907c2ef7-da9c-4dbf-b5c9-32eb8fb7540a",
-      "userName": "gfg",
-      "userMessage": "fgfgfg"
-    },
-    {
-      "id": "7895539c-8f90-4249-95f3-d74b699668ee",
-      "userName": "fdfdf",
-      "userMessage": "dfdfdf"
+      "id": 1,
+      "userEmail": "jeffer@gmail.com",
+      "userPassword": "qwerty",
+      "products": [],
+      "isAdmin": false
     }
   ]
 }

@@ -1,4 +1,4 @@
-import sendMessage from "../model/userModel.js";
+import { userModel } from "../model/userModel.js";
 
 const footerSubmit = async () => {
 
@@ -11,7 +11,7 @@ const footerSubmit = async () => {
       userName,
       userMessage,
     };
-    return await sendMessage(data);
+    return await userModel.sendMessage(data);
   }
 };
 

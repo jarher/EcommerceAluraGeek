@@ -68,8 +68,8 @@ const renderEditProductForm = (product) => {
     .append(formTemplate("edit", product));
 };
 
-const renderSingleProduct = (data) => {
-  document.querySelector(".product").prepend(singleProductTemplate(data));
+const renderSingleProduct = (data, state) => {
+  document.querySelector(".product").prepend(singleProductTemplate(data, state));
 };
 
 export const productView = {
