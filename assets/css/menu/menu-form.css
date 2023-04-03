@@ -2,7 +2,6 @@
   display: flex;
   width: 46px;
 }
-
 .menu__form--focus {
   position: absolute;
   left: 10px;
