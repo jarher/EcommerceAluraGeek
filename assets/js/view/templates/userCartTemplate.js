@@ -2,8 +2,14 @@ const userCartTemplate = (userProducts, total) => {
     const menu_user_cart = document.createElement("div");
     menu_user_cart.setAttribute("class","menu__user-cart");
 
-    const template =`
-    <span class="menu__user__title">Mis productos</span>
+    const template = `
+    <div class="menu__user__header">
+        <span class="menu__user__title">Mis productos</span>
+        <span class="material-symbols-rounded" data-type="menuUser">
+            cancel
+        </span>
+    </div>
+    
     <div class="menu__products">
         ${userProducts}
     </div>

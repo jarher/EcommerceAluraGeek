@@ -14,7 +14,6 @@ const adminState = adminController.getAdminState();
 const userState = userController.getUserState();
 let isEditable = false;
 
-
 const location = new URL(window.location);
 let pathname = location.pathname.replace("/", "").split("?")[0];
 
@@ -32,13 +31,11 @@ if (pathname === "productos.html") {
 } else if (pathname === "login.html") {
   if (adminState) {
     redirect("editar-productos.html");
-  } else if (userState) {
-    if (userState.state) {
-      redirect("index.html");
-    }
-  } else {
-    loginView.loadLoginForm();
   }
+  if (userState && userState.state) {
+    redirect("index.html");
+  }
+  loginView.loadLoginForm();
   loginController.login();
 } else if (pathname === "crear-producto.html") {
   if (loginState) {
@@ -163,7 +160,8 @@ document.addEventListener("click", async (e) => {
     } else {
       userController.loadUserMenu();
       setTimeout(
-        () => document.querySelector(".menu__user-cart").classList.add("opacity-1"),
+        () =>
+          document.querySelector(".menu__user-cart").classList.add("opacity-1"),
         200
       );
     }
@@ -178,7 +176,7 @@ document.addEventListener("click", async (e) => {
   }
   if (datatype === "logout") {
     adminController.setAdminState(false);
-    userController.setUserState(null, false)
+    userController.setUserState(null, false);
     redirect("index.html");
   }
   if (datatype === "closeModal") {
@@ -192,8 +190,8 @@ document.addEventListener("click", async (e) => {
   if (datatype === "decrementQuantity") {
     productsController.changeQuantity("decrement");
   }
-  if(datatype === "cancelPurchase") {
-    userController.cancelPurchase()
+  if (datatype === "cancelPurchase") {
+    userController.cancelPurchase();
   }
 });
 
