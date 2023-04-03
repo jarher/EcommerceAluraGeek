@@ -163,21 +163,61 @@
       "productDescription": "Muñeco darth vader"
     }
   ],
-  "messages": [
-  ],
-  "user":[
+  "messages": [],
+  "user": [
     {
-      "id": null,
+      "id": 1,
       "userEmail": "jefferh33@gmail.com",
       "userPassword": "aluraGeekAdmin11",
       "products": null,
       "isAdmin": true
     },
     {
-      "id": 1,
+      "id": 2,
       "userEmail": "jeffer@gmail.com",
       "userPassword": "qwerty",
-      "products": [],
+      "products": [
+        {
+          "id": "667d64b4-c42e-4e7d-a219-274669422fbc",
+          "imgUrl": "assets\\img\\darth-vader-toy.png",
+          "imgAlt": "dath vader juguete",
+          "productTitle": "juguete darth vader",
+          "productCategory": "star wars",
+          "productPrice": "6.99",
+          "productDescription": "Muñeco darth vader",
+          "quantity": 2
+        },
+        {
+          "id": "523202b5-7927-4e52-af23-bb4b5e7e9b91",
+          "imgUrl": "assets\\img\\yoda-toy.png",
+          "imgAlt": "muñeco yoda pequeño",
+          "productTitle": "juguete yoda",
+          "productCategory": "star wars",
+          "productPrice": "6.55",
+          "productDescription": "Muñeco yoda, tamaño pequeño",
+          "quantity": 2
+        },
+        {
+          "id": "e9fd4c1d-ee1a-45ce-baed-f832f5900c21",
+          "imgUrl": "assets\\img\\consola-nintendo-switch.png",
+          "imgAlt": "consola nintendo switch",
+          "productTitle": "consola nintendo switch",
+          "productCategory": "consolas",
+          "productPrice": "65.55",
+          "productDescription": "consola nintendo colores rojo y azul",
+          "quantity": 1
+        },
+        {
+          "id": "90a59b3c-5b9d-4c0e-9fe2-f3f883da17d4",
+          "imgUrl": "assets\\img\\victorinox-secure-pro-usb-drive.png",
+          "imgAlt": "navaja multiusos usb",
+          "productTitle": "navaja multiusos usb",
+          "productCategory": "diversos",
+          "productPrice": "7.45",
+          "productDescription": "navaja con memoria usb incluida",
+          "quantity": 2
+        }
+      ],
       "isAdmin": false
     }
   ]

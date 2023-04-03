@@ -5,7 +5,7 @@
 @import url("./menu-form-submit.css");
 @import url("./menu-admin-options.css");
 @import url("./menu-admin-button.css");
-
+@import url("./menu-user-cart.css");
 .menu {
   background-color: white;
   padding:1rem 2rem;

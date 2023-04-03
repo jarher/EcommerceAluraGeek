@@ -10,29 +10,34 @@ const userCartTemplate = (userProducts, total) => {
     <div class="menu__total">Total: $${total}</div>
     <div class="menu__buttons">
         <button>Comprar</button>
-        <button>Cancelar compra</button>
+        <button data-type="cancelPurchase">Cancelar compra</button>
     </div>
-    <span data-type="logout">Cerrar sesión</span>
+    <span data-type="logout" class="menu__logout">Cerrar sesión</span>
     `;
 
     menu_user_cart.innerHTML = template;
     return menu_user_cart;
 };
 
-const menu_product = ({imgUrl, imgAlt, productTitle, productPrice}) => `
+const menu_product = ({
+  imgUrl,
+  imgAlt,
+  productTitle,
+  productPrice,
+  quantity,
+}) => `
 <div class="menu__product">
     <img src="${imgUrl}" alt="${imgAlt}">
     <div class="menu__desc">
         <span class="menu__desc__title">${productTitle}</span>
-        <span class="menu__desc__price">Precio $ ${productPrice}</span>
+        <span class="menu__desc__price">Precio: $ ${productPrice}</span>
+        <span class="menu__desc__quantity">Cantidad: $ ${quantity}</span>
     </div>
 </div>`;
 
-const renderUserCard = (userData, total) => {
-    const userProducts = userData.map(product => {
-        menu_product(product)
-    });
-    document.querySelector("menu").append(userCartTemplate(userProducts, total));
+const renderUserCart = (userData, total) => {
+    let userProducts = userData.products.map((product) => menu_product(product));
+    document.querySelector(".menu").append(userCartTemplate(userProducts, total));
 }
 
-export default renderUserCard;
+export default renderUserCart;

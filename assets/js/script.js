@@ -14,6 +14,7 @@ const adminState = adminController.getAdminState();
 const userState = userController.getUserState();
 let isEditable = false;
 
+
 const location = new URL(window.location);
 let pathname = location.pathname.replace("/", "").split("?")[0];
 
@@ -32,7 +33,9 @@ if (pathname === "productos.html") {
   if (adminState) {
     redirect("editar-productos.html");
   } else if (userState) {
-    redirect("index.html");
+    if (userState.state) {
+      redirect("index.html");
+    }
   } else {
     loginView.loadLoginForm();
   }
@@ -81,7 +84,7 @@ if (pathname === "productos.html") {
 // si el administrador y usuario no está logeado guarda el estado como false
 if (adminState === null && userState === null) {
   adminController.setAdminState();
-  userController.setUserState();
+  userController.setUserState(false);
 }
 
 document.addEventListener("click", async (e) => {
@@ -117,12 +120,12 @@ document.addEventListener("click", async (e) => {
       (item) =>
         item.userEmail === inputEmail && item.userPassword === inputPassword
     )[0];
-     
+
     if (user.isAdmin) {
       adminController.setAdminState(true);
       redirect("editar-productos.html");
     } else {
-      userController.setUserState(true);
+      userController.setUserState(user.id, true);
       redirect("index.html");
     }
   }
@@ -153,11 +156,29 @@ document.addEventListener("click", async (e) => {
       );
     }
   }
+  if (datatype === "menuUser") {
+    const userMenu = document.querySelector(".menu__user-cart");
+    if (userMenu) {
+      closeMenu(userMenu);
+    } else {
+      userController.loadUserMenu();
+      setTimeout(
+        () => document.querySelector(".menu__user-cart").classList.add("opacity-1"),
+        200
+      );
+    }
+  }
+  if (datatype === "addCart") {
+    const url = new URL(window.location);
+    const productId = url.searchParams.get("productId");
+    userController.addToCart(productId, productsController.quantity);
+  }
   if (datatype === "closeAdminMenu") {
     closeMenu(document.querySelector(".menu__admin-options"));
   }
   if (datatype === "logout") {
-    adminController.setLoginState(false);
+    adminController.setAdminState(false);
+    userController.setUserState(null, false)
     redirect("index.html");
   }
   if (datatype === "closeModal") {
@@ -165,7 +186,17 @@ document.addEventListener("click", async (e) => {
     modal.classList.remove("opacity-1");
     setTimeout(() => modal.remove(), 500);
   }
+  if (datatype === "incrementQuantity") {
+    productsController.changeQuantity("increment");
+  }
+  if (datatype === "decrementQuantity") {
+    productsController.changeQuantity("decrement");
+  }
+  if(datatype === "cancelPurchase") {
+    userController.cancelPurchase()
+  }
 });
+
 //blanqueo del contenedor de resultados de búsqueda
 document.querySelector("[data-search]").addEventListener("input", (e) => {
   if (e.target.value === "") {

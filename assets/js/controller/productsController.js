@@ -3,6 +3,9 @@ import loadModal from "../view/modal.js";
 import { productView } from "../view/productView.js";
 import { userController } from "./userController.js";
 
+const quantity = {
+  value:1
+}
 const listAllProducts = async (isEditable) => {
   const response = await model.getAllProducts();
   if (response instanceof Array) {
@@ -32,7 +35,7 @@ const loadProductsByCategory = async (isEditable) => {
   }
 };
 
-const loadSingleProduct = async () => {
+const loadSingleProduct = async (quantity) => {
   const url = new URL(window.location);
 
   const id = url.searchParams.get("productId");
@@ -46,9 +49,13 @@ const loadSingleProduct = async () => {
 
     const category = responseProduct.productCategory;
 
-    productView.renderSingleProduct(responseProduct, userController.getUserState());
+    productView.renderSingleProduct(
+      responseProduct,
+      userController.getUserState()
+    );
 
     productView.renderListCategory(filterList, category, false);
+
   } else {
     loadModal(responseList);
   }
@@ -117,7 +124,7 @@ const getProductData = async () => {
   const product_id = url.searchParams.get("product_id");
 
   const response = await model.getProduct(product_id);
- 
+
   if (response instanceof Object) {
     productView.renderEditProductForm(response);
   } else {
@@ -159,6 +166,15 @@ const resetSearch = () => {
   document.querySelector(".sections__content").style.display = "block";
 };
 
+const changeQuantity = (value) => {
+  if (value === "increment") {
+    quantity.value++;
+  } else {
+    quantity.value <= 1 ? (quantity.value = 1) : quantity.value--;
+  }
+  document.querySelector(".product__quantity").textContent = quantity.value;
+};
+
 export const productsController = {
   listAllProducts,
   listEditAllProducts,
@@ -170,4 +186,6 @@ export const productsController = {
   getProductData,
   delProduct,
   resetSearch,
+  quantity,
+  changeQuantity
 };
