@@ -13,6 +13,16 @@ const setUserState = (id, value) =>
 
 const getUserState = () => JSON.parse(localStorage.getItem("userLogin"));
 
+const createUser = async (userEmail, userPassword) => {
+  const data = {
+    id: uuid.v4(),
+    userEmail,
+    userPassword,
+    products: [],
+    isAdmin: false,
+  };
+  await userModel.createUser(data);
+}
 const getUserProducts = (id) => {
   const userData = userModel.getUser(id);
   const userProducts = userData.products;
@@ -59,4 +69,5 @@ export const userController = {
   addToCart,
   loadUserMenu,
   cancelPurchase,
+  createUser
 };

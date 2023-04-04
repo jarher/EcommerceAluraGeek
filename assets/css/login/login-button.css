@@ -1,6 +1,7 @@
 .login__button{
     align-self: center;
     width: 50%;
+    margin-top: 5%;
 }
 @media (min-width: 1024px) {
    .login__button{

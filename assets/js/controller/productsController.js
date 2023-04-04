@@ -61,7 +61,8 @@ const loadSingleProduct = async (quantity) => {
   }
 };
 
-const createProduct = async (e) => {
+const createProduct = async () => {
+  
   const imgUrl = document.querySelector("[data-image-url]").value;
   const imgAlt = document.querySelector("[data-image-alt]").value;
   const productTitle = document.querySelector("[data-product-name]").value;
@@ -73,6 +74,7 @@ const createProduct = async (e) => {
     "[data-product-description]"
   ).value;
 
+  
   const data = {
     id: uuid.v4(),
     imgUrl,
@@ -83,6 +85,7 @@ const createProduct = async (e) => {
     productDescription,
   };
   const response = await model.createProduct(data);
+
   if (response instanceof Array) {
     loadModal("producto creado exitosamente");
   } else {

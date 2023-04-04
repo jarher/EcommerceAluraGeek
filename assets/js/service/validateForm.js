@@ -1,22 +1,49 @@
+import { userModel } from "../model/userModel.js";
+
 const validate = (input) => {
     
   const datatype = Object.keys(input.dataset)[0];
-  // if (validators[datatype]) {
-  //   validators[datatype](input);
-  // }
+  if (validators[datatype]) {
+    validators[datatype](input);
+  }
 
   if (input.validity.valid) {
-     input.parentElement.querySelector(".form__error-mesagge").innerHTML= "";
+     input.parentElement.querySelector(".form__error-message").innerHTML= "";
+     document.querySelector(".form__button").removeAttribute("disabled");
   } else {
-    input.parentElement.querySelector(".form__error-mesagge").innerHTML=
+    input.parentElement.querySelector(".form__error-message").innerHTML=
       showErrorMessage(datatype, input);
   }
 
   input.setCustomValidity("");
 };
 
-// const validators = {
-// };
+const validators = {
+  registerEmail: async (e) => {
+    const userData = await userModel.getAllUser();
+    userData.forEach(element => {
+      if(element.userEmail === e.value){
+        e.setCustomValidity("Correo Existente");
+      }
+    })
+  },
+  registerConfirmEmail: (e) => {
+    if(e.value !== document.querySelector("[data-register-email]").value){
+      e.setCustomValidity("Correo incompatible")
+    }
+  },
+  registerPassword:async(e) => {
+    const userData = await userModel.getAllUser();
+    userData.forEach(element => {
+      if(element.userPassword === e.value){
+        e.setCustomValidity("Contraseña existente")
+      }else{
+        document.querySelector(".login__button").removeAttribute("disabled");
+      }
+    })
+  }
+
+};
 
 const errorTypes = [
   "valueMissing",
@@ -36,6 +63,22 @@ const errorMessages = {
     typeMismatch: "El correo electrónico no es válido",
     patternMismatch: "El correo electrónico es erróneo",
     customError: "Email incorrecto",
+  },
+  registerEmail: {
+    valueMissing: "El campo email no puede estar vacío",
+    typeMismatch: "El correo electrónico no es válido",
+    patternMismatch: "El correo electrónico es erróneo",
+    customError: "Email Existente",
+  },
+  registerConfirmEmail: {
+    valueMissing: "El campo email no puede estar vacío",
+    typeMismatch: "El correo electrónico no es válido",
+    patternMismatch: "El correo electrónico es erróneo",
+    customError: "Email incompatible",
+  },
+  registerPassword: {
+    valueMissing: "El campo password no puede estar vacío",
+    customError: "Contraseña existente",
   },
   username: {
     valueMissing: "El campo nombre no puede estar vacío",

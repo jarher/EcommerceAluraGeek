@@ -2,6 +2,7 @@ import { adminController } from "./controller/adminController.js";
 import footerSubmit from "./controller/footerController.js";
 import { loginController } from "./controller/loginController.js";
 import { productsController } from "./controller/productsController.js";
+import { registerController } from "./controller/registerController.js";
 import { userController } from "./controller/userController.js";
 import validateForms from "./controller/validateForms.js";
 import { userModel } from "./model/userModel.js";
@@ -38,8 +39,9 @@ if (pathname === "productos.html") {
   loginView.loadLoginForm();
   loginController.login();
 } else if (pathname === "crear-producto.html") {
-  if (loginState) {
+  if (adminState) {
     productView.loadProductFormCreate();
+    document.querySelector(".form__button").setAttribute("disabled", "");
   } else {
     redirect("index.html");
   }
@@ -91,7 +93,8 @@ document.addEventListener("click", async (e) => {
     redirect("crear-producto.html");
   }
   if (datatype === "create-product") {
-    productsController.createProduct(e);
+    e.preventDefault();
+    productsController.createProduct();
     redirect("editar-productos.html");
   }
   if (datatype === "edit-product") {
@@ -125,6 +128,10 @@ document.addEventListener("click", async (e) => {
       userController.setUserState(user.id, true);
       redirect("index.html");
     }
+  }
+  if (datatype === "registerSubmit") {
+    registerController.register();
+    redirect("login.html");
   }
   if (datatype === "messageSubmit") {
     let message;

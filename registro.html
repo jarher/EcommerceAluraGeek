@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Geek - Login</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="search__content"></div>
+        <div class="sections__content">
+            <section class="login">
+                <div class="login__container">
+                    <h1 class="form__title login__title">Registro</h1>
+                    <div class="form__wrapper">
+                        <input type="email" class="login__input" data-register-email placeholder="Escriba su correo electrónico" required>
+                        <span class="form__error-mesagge"></span>
+                    </div>
+                    <div class="form__wrapper">
+                        <input type="email" class="login__input" data-register-confirm-email placeholder="Confirme su correo electrónico" required>
+                        <span class="form__error-mesagge"></span>
+                    </div>
+                    <div class="form__wrapper">
+                        <input type="password" class="login__input" data-register-password placeholder="Escriba su contraseña" required>
+                        <span class="form__error-mesagge"></span>
+                    </div>
+                    <p>¿ya tienes una cuenta?<a href="login.html"> Ingresar</a></p>
+                    <button class="form__button login__button" data-type="registerSubmit">Registrarse</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/7.0.0/uuid.min.js"></script>
+    <script src="./assets/js/script.js" type="module"></script>
+</body>
+
+</html>

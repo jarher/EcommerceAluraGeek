@@ -38,17 +38,19 @@ const getUsers = async () => {
 };
 const createUser = async (data) => {
   try {
-    const response = await fetch(`http://localhost:3000/user`, {
+    const response = await fetch("http://localhost:3000/user", {
       method: "POST",
-      header: {
-        "Content-Type": "application/json",
+      headers: {
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(data),
     });
     if (response.ok) {
       return response.json();
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 };
 const updateUser = async (data, id) => {
   const response = await fetch(
@@ -63,6 +65,7 @@ const updateUser = async (data, id) => {
   );
   console.log(response);
 };
+
 export const makeRequest = {
   createMessage,
   getUserData,

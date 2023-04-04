@@ -171,54 +171,6 @@
       "userPassword": "aluraGeekAdmin11",
       "products": null,
       "isAdmin": true
-    },
-    {
-      "id": 2,
-      "userEmail": "jeffer@gmail.com",
-      "userPassword": "qwerty",
-      "products": [
-        {
-          "imgUrl": "assets\\img\\yoda-toy-2.png",
-          "imgAlt": "muñeco yoda",
-          "productCategory": "star wars",
-          "productTitle": "juguete yoda",
-          "productPrice": "6.66",
-          "productDescription": "Muñeco yoda, tamaño mediano",
-          "id": "64c85c4a-98b9-4269-9f0e-143524d7dc35",
-          "quantity": 2
-        },
-        {
-          "id": "070d6afc-54b3-4cca-b8d2-e18b4fc6a49e",
-          "imgUrl": "assets\\img\\darth-sidious-toy.png",
-          "imgAlt": "muñeco darth sidious",
-          "productTitle": "juguete darth sidious",
-          "productCategory": "star wars",
-          "productPrice": "20.99",
-          "productDescription": "Muñeco darth sidious, tamaño grande",
-          "quantity": 2
-        },
-        {
-          "id": "667d64b4-c42e-4e7d-a219-274669422fbc",
-          "imgUrl": "assets\\img\\darth-vader-toy.png",
-          "imgAlt": "dath vader juguete",
-          "productTitle": "juguete darth vader",
-          "productCategory": "star wars",
-          "productPrice": "6.99",
-          "productDescription": "Muñeco darth vader",
-          "quantity": 2
-        },
-        {
-          "id": "6dc24695-5c16-4aaa-af58-04c5a1ba4939",
-          "imgUrl": "assets\\img\\clone-trooper-cup.png",
-          "imgAlt": "vaso clone trooper",
-          "productTitle": "vaso clone trooper",
-          "productCategory": "star wars",
-          "productPrice": "5.65",
-          "productDescription": "vaso de porcelana",
-          "quantity": 2
-        }
-      ],
-      "isAdmin": false
     }
   ]
 }
