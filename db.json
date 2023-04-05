@@ -171,34 +171,6 @@
       "userPassword": "aluraGeekAdmin11",
       "products": null,
       "isAdmin": true
-    },
-    {
-      "id": "3cc0e7ec-2664-49ca-aeb5-a74627a994d5",
-      "userEmail": "jeffer@gmail.com",
-      "userPassword": "123456",
-      "products": [
-        {
-          "id": "667d64b4-c42e-4e7d-a219-274669422fbc",
-          "imgUrl": "assets\\img\\darth-vader-toy.png",
-          "imgAlt": "dath vader juguete",
-          "productTitle": "juguete darth vader",
-          "productCategory": "star wars",
-          "productPrice": "6.99",
-          "productDescription": "Muñeco darth vader",
-          "quantity": 2
-        },
-        {
-          "id": "523202b5-7927-4e52-af23-bb4b5e7e9b91",
-          "imgUrl": "assets\\img\\yoda-toy.png",
-          "imgAlt": "muñeco yoda pequeño",
-          "productTitle": "juguete yoda",
-          "productCategory": "star wars",
-          "productPrice": "6.55",
-          "productDescription": "Muñeco yoda, tamaño pequeño",
-          "quantity": 2
-        }
-      ],
-      "isAdmin": false
     }
   ]
 }

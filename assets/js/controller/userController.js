@@ -52,7 +52,7 @@ const loadUserMenu = async () => {
     (item) => item.productPrice * item.quantity
   );
   const total = subtotal.reduce((acc, current) => acc + current, 0);
-  return renderUserCart(user, total);
+  return renderUserCart(user, total.toFixed(2));
 };
 
 const cancelPurchase = async () => {
