@@ -53,17 +53,18 @@ const createUser = async (data) => {
   }
 };
 const updateUser = async (data, id) => {
-  const response = await fetch(
-    `http://localhost:3000/user/${id}`,
-    {
+  try {
+    const response = await fetch(`http://localhost:3000/user/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }
-  );
-  console.log(response);
+    });
+  } catch (error) {
+    return "Ocurrió un error al actualizar"
+  }
+  
 };
 
 export const makeRequest = {
