@@ -8,6 +8,7 @@ import validateForms from "./controller/validateForms.js";
 import { userModel } from "./model/userModel.js";
 import { loginView } from "./view/loginView.js";
 import { mainModulesView } from "./view/mainModulesView.js";
+import loadModal from "./view/modal.js";
 import { productView } from "./view/productView.js";
 import { adminMenuTemplate } from "./view/templates/adminMenuTemplate.js";
 
@@ -105,14 +106,18 @@ document.addEventListener("click", async (e) => {
       (item) =>
         item.userEmail === inputEmail && item.userPassword === inputPassword
     )[0];
-
-    if (user.isAdmin) {
-      adminController.setAdminState(true);
-      redirect("editar-productos.html");
-    } else {
-      userController.setUserState(user.id, true);
-      redirect("index.html");
+    if(user){
+      if (user.isAdmin) {
+        adminController.setAdminState(true);
+        redirect("editar-productos.html");
+      } else {
+        userController.setUserState(user.id, true);
+        redirect("index.html");
+      }
+    }else{
+      loadModal("El usuario no existe");
     }
+    
   }
   if (datatype === "registerSubmit") {
     registerController.register();
