@@ -41,9 +41,10 @@ const renderlistIndex = (productList, isEditable) => {
 
   renderCards(productList, isEditable, product_cards);
   filterCards(window_width);
-  
+
   window.addEventListener("resize", () => {
-    product_cards.innerHTML = "";
+    product_cards.forEach(container => container.innerHTML = "");
+    
     const window_width = window.innerWidth;
     renderCards(productList, isEditable, product_cards);
 
