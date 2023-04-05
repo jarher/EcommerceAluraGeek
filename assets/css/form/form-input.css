@@ -2,6 +2,10 @@
   font-size: 1.2rem;
   transition: all 0.25s;
   margin-top: 0.9rem;
+  display: block;
+  background-color: white;
+  width: 100%;
+  padding-left: 1rem;
 }
 .form__input:focus{
   margin-top:1rem

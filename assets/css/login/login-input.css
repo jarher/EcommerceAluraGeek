@@ -3,5 +3,9 @@
     font-size: 1.1rem;
 }
 .login__input{
-    padding: 1%;
+    padding: 5%;
+    width: 100%;
+    display: block;
+    background-color: white;
+
 }

@@ -121,6 +121,7 @@ const adminEditTemplate = ({
 
   const form = document.createElement("form");
   form.setAttribute("class", "form");
+  form.setAttribute("method", "POST");
   form.innerHTML = template;
 
   return form;
@@ -150,7 +151,7 @@ const loginFormTemplate = () => {
             placeholder="Escriba su contraseña" required>
         <span class="form__error-message"></span>
     </div>
-    <p>¿no tienes una cuenta?<a href="registro.html">Regístrate</a></p>
+    <p>¿no tienes una cuenta?<a href="registro.html"> Regístrate</a></p>
     <button class="form__button login__button" data-type="loginSubmit">Entrar</button>`;
 
   const form = document.createElement("form");

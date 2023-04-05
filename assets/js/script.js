@@ -52,7 +52,7 @@ if (pathname === "productos.html") {
     redirect("index.html");
   }
 } else if (pathname === "editar-producto.html") {
-  if (loginState) {
+  if (adminState) {
     productsController.getProductData();
   } else {
     redirect("index.html");
@@ -63,23 +63,7 @@ if (pathname === "productos.html") {
   document.querySelector(".message__content").textContent = params;
 } else {
   productsController.listAllProducts(isEditable);
-  //selección de unos pocos productos al inicio
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".products").forEach((products) => {
-      products
-        .querySelectorAll(".product__card__box")
-        .forEach((productBox, index) => {
-          if (window_width < 1024 && index > 3) {
-            productBox.remove();
-          }
-          if (window_width >= 1024 && index > 5) {
-            productBox.remove();
-          }
-        });
-    });
-  });
 }
-
 // si el administrador y usuario no está logeado guarda el estado como false
 if (adminState === null && userState === null) {
   adminController.setAdminState();
@@ -98,6 +82,7 @@ document.addEventListener("click", async (e) => {
     redirect("editar-productos.html");
   }
   if (datatype === "edit-product") {
+    e.preventDefault();
     productsController.editProduct(e);
     redirect("editar-productos.html");
   }
@@ -135,9 +120,6 @@ document.addEventListener("click", async (e) => {
   }
   if (datatype === "messageSubmit") {
     let message;
-    document
-      .querySelector("footer .form")
-      .addEventListener("submit", (e) => e.preventDefault());
     if ((await footerSubmit()) === 201) {
       message = "mensaje enviado exitosamente";
     } else {

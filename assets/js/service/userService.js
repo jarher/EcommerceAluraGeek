@@ -22,7 +22,7 @@ const getUserData = async (id) => {
       return response.json();
     }
   } catch (error) {
-    console.log(error);
+    return "ocurrió un error, inténtelo más tarde";
   }
 };
 
@@ -33,7 +33,7 @@ const getUsers = async () => {
       return response.json();
     }
   } catch (error) {
-    console.log(error);
+    return "ocurrió un error, inténtelo más tarde";
   }
 };
 const createUser = async (data) => {
@@ -49,7 +49,7 @@ const createUser = async (data) => {
       return response.json();
     }
   } catch (error) {
-    console.log(error)
+    return "ocurrió un error, inténtelo más tarde";
   }
 };
 const updateUser = async (data, id) => {

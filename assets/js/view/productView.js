@@ -8,11 +8,7 @@ const loadProductFormCreate = () => {
     .append(formTemplate("create", null));
 };
 
-const renderlistIndex = (productList, isEditable) => {
-  let window_width = screen.availWidth;
-
-  const product_cards = document.querySelectorAll(".products__cards");
-
+const renderCards = (productList, isEditable, product_cards) => {
   for (let productWrapper of product_cards) {
     const datatype = productWrapper.dataset.type;
     for (let index in productList) {
@@ -23,6 +19,36 @@ const renderlistIndex = (productList, isEditable) => {
       }
     }
   }
+};
+
+const filterCards = (window_width) => {
+  document.querySelectorAll(".products__cards").forEach((cards) =>
+    cards.querySelectorAll(".product__card__box").forEach((el, i) => {
+      if (window_width < 1024 && i > 3) {
+        el.remove();
+      } else {
+        if (i > 5) {
+          el.remove();
+        }
+      }
+    })
+  );
+};
+
+const renderlistIndex = (productList, isEditable) => {
+  const product_cards = document.querySelectorAll(".products__cards");
+  const window_width = window.innerWidth;
+
+  renderCards(productList, isEditable, product_cards);
+  filterCards(window_width);
+  
+  window.addEventListener("resize", () => {
+    product_cards.innerHTML = "";
+    const window_width = window.innerWidth;
+    renderCards(productList, isEditable, product_cards);
+
+    filterCards(window_width);
+  });
 };
 
 const renderAllProducts = (productList, isEditable) => {
@@ -69,7 +95,9 @@ const renderEditProductForm = (product) => {
 };
 
 const renderSingleProduct = (data, state) => {
-  document.querySelector(".product").prepend(singleProductTemplate(data, state));
+  document
+    .querySelector(".product")
+    .prepend(singleProductTemplate(data, state));
 };
 
 export const productView = {
