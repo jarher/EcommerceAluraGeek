@@ -163,7 +163,13 @@
       "productDescription": "Muñeco darth vader"
     }
   ],
-  "messages": [],
+  "messages": [
+    {
+      "id": "895ebb7b-f00b-40e2-b4fa-4f9a46843ff8",
+      "userName": "jeff",
+      "userMessage": "primer mensaje"
+    }
+  ],
   "user": [
     {
       "id": 1,

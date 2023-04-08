@@ -124,6 +124,7 @@ document.addEventListener("click", async (e) => {
     redirect("login.html");
   }
   if (datatype === "messageSubmit") {
+    e.preventDefault()
     let message;
     if ((await footerSubmit()) === 201) {
       message = "mensaje enviado exitosamente";
